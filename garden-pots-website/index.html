@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pageTitle">Premium Plastic Garden Pots - PlanterPro | Direct Manufacturer</title>
+    <meta name="description" data-i18n="metaDescription" content="PlanterPro - Your trusted manufacturer of high quality plastic garden pots for nurseries, garden centers and wholesale distributors.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        /* Product Image Gallery */
+        .product-gallery {
+            position: relative;
+        }
+        
+        .gallery-main-img {
+            width: 100%;
+            height: 48px;
+            object-cover;
+            border-radius: 0.5rem;
+        }
+        
+        .gallery-thumbnails {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .gallery-thumbnail {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .gallery-thumbnail:hover {
+            opacity: 0.8;
+        }
+        
+        .gallery-thumbnail.active {
+            border-color: #3b82f6;
+        }
+        
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 8px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 15px;
+            border-radius: 50%;
+        }
+        
+        .lightbox-prev {
+            left: 20px;
+        }
+        
+        .lightbox-next {
+            right: 20px;
+        }
+        
+        .lang-switcher a {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .lang-switcher a:hover {
+            color: #3b82f6;
+        }
+        
+        .lang-switcher a.active {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-seedling text-green-600 text-2xl mr-2"></i>
+                    <span class="text-xl font-bold text-gray-900">PlanterPro</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.home">Home</a>
+                        <a href="#products" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.products">Products</a>
+                        <a href="#about" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.about">About Us</a>
+                        <a href="#features" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.why">Why Choose Us</a>
+                        <a href="#contact" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.contact">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- Language Switcher - Dropdown -->
+                    <div class="relative" id="language-dropdown">
+                        <button id="language-btn" class="flex items-center px-3 py-1 text-sm border border-gray-300 rounded-md hover:border-blue-500 transition-colors">
+                            <span id="current-lang-text">EN</span>
+                            <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </button>
+                        <div id="language-menu" class="absolute hidden right-0 mt-2 w-28 bg-white rounded-md shadow-lg border border-gray-200 z-50">
+                            <a data-lang="en" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 cursor-pointer">English</a>
+                            <a data-lang="es" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 cursor-pointer">Español</a>
+                            <a data-lang="fr" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 cursor-pointer">Français</a>
+                            <a data-lang="zh" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 cursor-pointer">繁體中文</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-900" data-i18n="nav.home">Home</a>
+                <a href="#products" class="block px-3 py-2 text-gray-600" data-i18n="nav.products">Products</a>
+                <a href="#about" class="block px-3 py-2 text-gray-600" data-i18n="nav.about">About Us</a>
+                <a href="#features" class="block px-3 py-2 text-gray-600" data-i18n="nav.why">Why Choose Us</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-600" data-i18n="nav.contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white pt-32 pb-20 mt-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        <span data-i18n="hero.title1">Premium Quality</span><br>
+                        <span class="text-yellow-300" data-i18n="hero.title2">Plastic Garden Pots</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-blue-100 leading-relaxed" data-i18n="hero.subtitle">
+                        Your trusted manufacturer of durable, eco-friendly plastic garden pots for nurseries, garden centers, and wholesale distributors.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#products" class="bg-white text-blue-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block text-center" data-i18n="hero.viewProducts">
+                            <i class="fas fa-shopping-basket mr-2"></i>
+                            View Products
+                        </a>
+                        <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition-colors inline-block text-center" data-i18n="hero.getQuote">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Get Quote
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center gap-6">
+                        <div>
+                            <p class="text-3xl font-bold">10+</p>
+                            <p class="text-blue-100 text-sm" data-i18n="hero.exp">Years Experience</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold">5000+</p>
+                            <p class="text-blue-100 text-sm" data-i18n="hero.clients">Happy Clients</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold">50+</p>
+                            <p class="text-blue-100 text-sm" data-i18n="hero.countries">Countries Exported</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="bg-white/10 backdrop-blur rounded-2xl p-4">
+                        <img src="images/hero.jpg" alt="Plastic Garden Pots" class="rounded-xl shadow-2xl w-full" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-i18n="products.title">Our Product Range</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="products.subtitle">High-quality plastic pots for every gardening need. Available in multiple sizes, colors, and specifications.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="product-gallery p-2">
+                        <img id="product1-main" src="images/product1.jpg" alt="Nursery Plastic Pots" class="w-full h-64 object-cover rounded-lg" loading="lazy">
+                        <div class="gallery-thumbnails" id="product1-thumbs">
+                            <img src="images/product1.jpg" class="gallery-thumbnail active" onclick="changeMainImage('product1', this, 'images/product1.jpg')" alt="Thumbnail">
+                            <img src="images/product1-1.png" class="gallery-thumbnail" onclick="changeMainImage('product1', this, 'images/product1-1.png')" alt="Thumbnail">
+                            <img src="images/product1-2.jpg" class="gallery-thumbnail" onclick="changeMainImage('product1', this, 'images/product1-2.jpg')" alt="Thumbnail">
+                            <img src="images/product1-3.jpg" class="gallery-thumbnail" onclick="changeMainImage('product1', this, 'images/product1-3.jpg')" alt="Thumbnail">
+                            <img src="images/product1-4.jpg" class="gallery-thumbnail" onclick="changeMainImage('product1', this, 'images/product1-4.jpg')" alt="Thumbnail">
+                            <img src="images/product1-5.jpg" class="gallery-thumbnail" onclick="changeMainImage('product1', this, 'images/product1-5.jpg')" alt="Thumbnail">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="products.p1.name">Nursery Seedling Pots</h3>
+                        <p class="text-gray-600 mb-4" data-i18n="products.p1.desc">Perfect for seed starting and nursery propagation. Available in 5cm to 15cm sizes.</p>
+                        <ul class="mb-4 space-y-2">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p1.f1">Sizes: 5cm - 15cm</span>
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p1.f2">Drainage holes available</span>
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p1.f3">Food-grade PP material</span>
+                            </li>
+                        </ul>
+                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4">
+                            <p class="text-sm text-gray-500" data-i18n="products.moq">MOQ: 10,000 pieces</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="product-gallery p-2">
+                        <img id="product2-main" src="images/product2.jpg" alt="Large Decorative Pots" class="w-full h-64 object-cover rounded-lg" loading="lazy">
+                        <div class="gallery-thumbnails" id="product2-thumbs">
+                            <img src="images/product2.jpg" class="gallery-thumbnail active" onclick="changeMainImage('product2', this, 'images/product2.jpg')" alt="Thumbnail">
+                            <img src="images/product2-1.jpg" class="gallery-thumbnail" onclick="changeMainImage('product2', this, 'images/product2-1.jpg')" alt="Thumbnail">
+                            <img src="images/product2-2.jpg" class="gallery-thumbnail" onclick="changeMainImage('product2', this, 'images/product2-2.jpg')" alt="Thumbnail">
+                            <img src="images/product2-3.jpg" class="gallery-thumbnail" onclick="changeMainImage('product2', this, 'images/product2-3.jpg')" alt="Thumbnail">
+                            <img src="images/product2-4.jpg" class="gallery-thumbnail" onclick="changeMainImage('product2', this, 'images/product2-4.jpg')" alt="Thumbnail">
+                            <img src="images/product2-5.jpg" class="gallery-thumbnail" onclick="changeMainImage('product2', this, 'images/product2-5.jpg')" alt="Thumbnail">
+                            <img src="images/product2-6.jpg" class="gallery-thumbnail" onclick="changeMainImage('product2', this, 'images/product2-6.jpg')" alt="Thumbnail">
+                            <img src="images/product2-7.jpg" class="gallery-thumbnail" onclick="changeMainImage('product2', this, 'images/product2-7.jpg')" alt="Thumbnail">
+                            <img src="images/product2-8.jpg" class="gallery-thumbnail" onclick="changeMainImage('product2', this, 'images/product2-8.jpg')" alt="Thumbnail">
+                            <img src="images/product2-9.jpg" class="gallery-thumbnail" onclick="changeMainImage('product2', this, 'images/product2-9.jpg')" alt="Thumbnail">
+                            <img src="images/product2-10.jpg" class="gallery-thumbnail" onclick="changeMainImage('product2', this, 'images/product2-10.jpg')" alt="Thumbnail">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="products.p2.name">Large Decorative Pots</h3>
+                        <p class="text-gray-600 mb-4" data-i18n="products.p2.desc">Ideal for mature plants and decorative landscaping. Sturdy and durable.</p>
+                        <ul class="mb-4 space-y-2">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p2.f1">Sizes: 20cm - 40cm</span>
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p2.f2">Multiple color options</span>
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p2.f3">UV stabilized material</span>
+                            </li>
+                        </ul>
+                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4">
+                            <p class="text-sm text-gray-500" data-i18n="products.moq">MOQ: 2,000 pieces</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="product-gallery p-2">
+                        <img id="product3-main" src="images/product3.jpg" alt="Hanging Basket Pots" class="w-full h-64 object-cover rounded-lg" loading="lazy">
+                        <div class="gallery-thumbnails" id="product3-thumbs">
+                            <img src="images/product3.jpg" class="gallery-thumbnail active" onclick="changeMainImage('product3', this, 'images/product3.jpg')" alt="Thumbnail">
+                            <img src="images/product3-1.jpg" class="gallery-thumbnail" onclick="changeMainImage('product3', this, 'images/product3-1.jpg')" alt="Thumbnail">
+                            <img src="images/product3-2.jpg" class="gallery-thumbnail" onclick="changeMainImage('product3', this, 'images/product3-2.jpg')" alt="Thumbnail">
+                            <img src="images/product3-3.jpg" class="gallery-thumbnail" onclick="changeMainImage('product3', this, 'images/product3-3.jpg')" alt="Thumbnail">
+                            <img src="images/product3-4.jpg" class="gallery-thumbnail" onclick="changeMainImage('product3', this, 'images/product3-4.jpg')" alt="Thumbnail">
+                            <img src="images/product3-5.jpg" class="gallery-thumbnail" onclick="changeMainImage('product3', this, 'images/product3-5.jpg')" alt="Thumbnail">
+                            <img src="images/product3-6.jpg" class="gallery-thumbnail" onclick="changeMainImage('product3', this, 'images/product3-6.jpg')" alt="Thumbnail">
+                            <img src="images/product3-7.jpg" class="gallery-thumbnail" onclick="changeMainImage('product3', this, 'images/product3-7.jpg')" alt="Thumbnail">
+                            <img src="images/product3-8.jpg" class="gallery-thumbnail" onclick="changeMainImage('product3', this, 'images/product3-8.jpg')" alt="Thumbnail">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="products.p3.name">Hanging Basket Pots</h3>
+                        <p class="text-gray-600 mb-4" data-i18n="products.p3.desc">Beautiful hanging planters for balconies and patios. Complete with hanging hooks.</p>
+                        <ul class="mb-4 space-y-2">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p3.f1">Includes hook & chain</span>
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p3.f2">Water retention design</span>
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p3.f3">Various diameter options</span>
+                            </li>
+                        </ul>
+                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4">
+                            <p class="text-sm text-gray-500" data-i18n="products.moq">MOQ: 1,000 pieces</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="product-gallery p-2">
+                        <img id="product4-main" src="images/product4.jpg" alt="Square Nursery Pots" class="w-full h-64 object-cover rounded-lg" loading="lazy">
+                        <div class="gallery-thumbnails" id="product4-thumbs">
+                            <img src="images/product4.jpg" class="gallery-thumbnail active" onclick="changeMainImage('product4', this, 'images/product4.jpg')" alt="Thumbnail">
+                            <img src="images/product4-1.jpg" class="gallery-thumbnail" onclick="changeMainImage('product4', this, 'images/product4-1.jpg')" alt="Thumbnail">
+                            <img src="images/product4-2.jpg" class="gallery-thumbnail" onclick="changeMainImage('product4', this, 'images/product4-2.jpg')" alt="Thumbnail">
+                            <img src="images/product4-3.jpg" class="gallery-thumbnail" onclick="changeMainImage('product4', this, 'images/product4-3.jpg')" alt="Thumbnail">
+                            <img src="images/product4-4.jpg" class="gallery-thumbnail" onclick="changeMainImage('product4', this, 'images/product4-4.jpg')" alt="Thumbnail">
+                            <img src="images/product4-5.jpg" class="gallery-thumbnail" onclick="changeMainImage('product4', this, 'images/product4-5.jpg')" alt="Thumbnail">
+                            <img src="images/product4-6.jpg" class="gallery-thumbnail" onclick="changeMainImage('product4', this, 'images/product4-6.jpg')" alt="Thumbnail">
+                            <img src="images/product4-7.jpg" class="gallery-thumbnail" onclick="changeMainImage('product4', this, 'images/product4-7.jpg')" alt="Thumbnail">
+                            <img src="images/product4-8.jpg" class="gallery-thumbnail" onclick="changeMainImage('product4', this, 'images/product4-8.jpg')" alt="Thumbnail">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="products.p4.name">Square Nursery Pots</h3>
+                        <p class="text-gray-600 mb-4" data-i18n="products.p4.desc">Space-saving square design for efficient nursery spacing and transport.</p>
+                        <ul classmb-4 space-y-2>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p4.f1">Stackable design</span>
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p4.f2">Maximizes space</span>
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p4.f3">Easy labeling</span>
+                            </li>
+                        </ul>
+                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4">
+                            <p class="text-sm text-gray-500" data-i18n="products.moq">MOQ: 5,000 pieces</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="product-gallery p-2">
+                        <img id="product5-main" src="images/product5.jpg" alt="Classic Round Pots" class="w-full h-64 object-cover rounded-lg" loading="lazy">
+                        <div class="gallery-thumbnails" id="product5-thumbs">
+                            <img src="images/product5.jpg" class="gallery-thumbnail active" onclick="changeMainImage('product5', this, 'images/product5.jpg')" alt="Thumbnail">
+                            <img src="images/product5-1.jpg" class="gallery-thumbnail" onclick="changeMainImage('product5', this, 'images/product5-1.jpg')" alt="Thumbnail">
+                            <img src="images/product5-2.jpg" class="gallery-thumbnail" onclick="changeMainImage('product5', this, 'images/product5-2.jpg')" alt="Thumbnail">
+                            <img src="images/product5-3.jpg" class="gallery-thumbnail" onclick="changeMainImage('product5', this, 'images/product5-3.jpg')" alt="Thumbnail">
+                            <img src="images/product5-4.jpg" class="gallery-thumbnail" onclick="changeMainImage('product5', this, 'images/product5-4.jpg')" alt="Thumbnail">
+                            <img src="images/product5-5.jpg" class="gallery-thumbnail" onclick="changeMainImage('product5', this, 'images/product5-5.jpg')" alt="Thumbnail">
+                            <img src="images/product5-6.jpg" class="gallery-thumbnail" onclick="changeMainImage('product5', this, 'images/product5-6.jpg')" alt="Thumbnail">
+                            <img src="images/product5-7.jpg" class="gallery-thumbnail" onclick="changeMainImage('product5', this, 'images/product5-7.jpg')" alt="Thumbnail">
+                            <img src="images/product5-8.jpg" class="gallery-thumbnail" onclick="changeMainImage('product5', this, 'images/product5-8.jpg')" alt="Thumbnail">
+                            <img src="images/product5-9.jpg" class="gallery-thumbnail" onclick="changeMainImage('product5', this, 'images/product5-9.jpg')" alt="Thumbnail">
+                            <img src="images/product5-10.jpg" class="gallery-thumbnail" onclick="changeMainImage('product5', this, 'images/product5-10.jpg')" alt="Thumbnail">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="products.p5.name">Classic Round Pots</h3>
+                        <p class="text-gray-600 mb-4" data-i18n="products.p5.desc">Traditional round plastic pots for general gardening use. All standard sizes.</p>
+                        <ul class="mb-4 space-y-2">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p5.f1">All standard sizes</span>
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p5.f2">Bulk packaging available</span>
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p5.f3">Cost-effective pricing</span>
+                            </li>
+                        </ul>
+                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4">
+                            <p class="text-sm text-gray-500" data-i18n="products.moq">MOQ: 20,000 pieces</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="product-gallery p-2">
+                        <img id="product6-main" src="images/product6.jpg" alt="Custom Molds & Sizes" class="w-full h-64 object-cover rounded-lg" loading="lazy">
+                        <div class="gallery-thumbnails" id="product6-thumbs">
+                            <img src="images/product6.jpg" class="gallery-thumbnail active" onclick="changeMainImage('product6', this, 'images/product6.jpg')" alt="Thumbnail">
+                            <img src="images/product6-1.jpg" class="gallery-thumbnail" onclick="changeMainImage('product6', this, 'images/product6-1.jpg')" alt="Thumbnail">
+                            <img src="images/product6-2.jpg" class="gallery-thumbnail" onclick="changeMainImage('product6', this, 'images/product6-2.jpg')" alt="Thumbnail">
+                            <img src="images/product6-3.jpg" class="gallery-thumbnail" onclick="changeMainImage('product6', this, 'images/product6-3.jpg')" alt="Thumbnail">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="products.p6.name">Custom Molds & Sizes</h3>
+                        <p class="text-gray-600 mb-4" data-i18n="products.p6.desc">Custom-made plastic pots according to your specific requirements and designs.</p>
+                        <ul class="mb-4 space-y-2">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p6.f1">Custom colors available</span>
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p6.f2">Logo printing possible</span>
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span data-i18n="products.p6.f3">OEM/ODM welcome</span>
+                            </li>
+                        </ul>
+                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4">
+                            <p class="text-sm text-gray-500" data-i18n="products.moqNeg">MOQ: Negotiable</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="features" class="section-padding bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-i18n="features.title">Why Choose Our Plastic Pots</h2>
+                <p class="text-xl text-gray-600" data-i18n="features.subtitle">We combine quality manufacturing with competitive pricing for wholesale buyers</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-recycling text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2" data-i18n="features.f1.title">Eco-Friendly Material</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="features.f1.desc">100% recyclable PP plastic, food-safe and non-toxic for healthy plant growth.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2" data-i18n="features.f2.title">UV Stabilized</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="features.f2.desc">Outdoor durability with UV protection prevents brittleness and fading.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-industry text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2" data-i18n="features.f3.title">Bulk Production</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="features.f3.desc">Large production capacity with consistent quality for big orders.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-ship text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2" data-i18n="features.f4.title">Export Ready</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="features.f4.desc">Experienced in exporting to 50+ countries with proper documentation.</p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-blue-50 rounded-2xl p-8 md:p-12">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="custom.title">Customization Available</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                                <span data-i18n="custom.f1">Custom colors to match your branding</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                                <span data-i18n="custom.f2">Logo printing on pots for brand recognition</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                                <span data-i18n="custom.f3">Different drainage hole configurations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                                <span data-i18n="custom.f4">Custom packaging according to your requirements</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="inline-block mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors" data-i18n="custom.cta">Discuss Your Custom Needs →</a>
+                    </div>
+                    <div>
+                        <img src="images/custom.jpg" alt="Custom manufacturing" class="rounded-xl shadow-lg" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6" data-i18n="about.title">About Our Manufacturing</h2>
+                    <p class="text-lg text-gray-600 mb-4 leading-relaxed" data-i18n="about.p1">
+                        With over 10 years of experience in plastic injection molding for horticulture, we specialize in producing high-quality plastic garden pots for the global market.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed" data-i18n="about.p2">
+                        Our modern factory is equipped with advanced injection molding machines, allowing us to maintain consistent quality while handling large volume orders efficiently.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                            <i class="fas fa-cogs text-blue-600 text-xl mr-3"></i>
+                            <div>
+                                <p class="font-semibold" data-i18n="about.f1.title">Modern Equipment</p>
+                                <p class="text-sm text-gray-600" data-i18n="about.f1.desc">30+ injection molding machines</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                            <i class="fas fa-flask text-blue-600 text-xl mr-3"></i>
+                            <div>
+                                <p class="font-semibold" data-i18n="about.f2.title">QC Testing</p>
+                                <p class="text-sm text-gray-600" data-i18n="about.f2.desc">Strict quality control</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                            <i class="fas fa-globe text-blue-600 text-xl mr-3"></i>
+                            <div>
+                                <p class="font-semibold" data-i18n="about.f3.title">Global Export</p>
+                                <p class="text-sm text-gray-600" data-i18n="about.f3.desc">50+ countries served</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                            <i class="fas fa-clock text-blue-600 text-xl mr-3"></i>
+                            <div>
+                                <p class="font-semibold" data-i18n="about.f4.title">On-Time Delivery</p>
+                                <p class="text-sm text-gray-600" data-i18n="about.f4.desc">Reliable production schedule</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="images/about.jpg" alt="Factory" class="rounded-2xl shadow-xl" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="contact.title">Get in Touch</h2>
+                <p class="text-xl text-gray-300" data-i18n="contact.subtitle">Ready to place an order or have questions? Contact us today for a quote.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6" data-i18n="contact.infoTitle">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-600 p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm" data-i18n="contact.emailLabel">Email</p>
+                                <p class="text-white">gardensupply@zohomail.cn</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-blue-600 p-3 rounded-lg mr-4">
+                                <i class="fab fa-whatsapp text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm" data-i18n="contact.whatsappLabel">WhatsApp</p>
+                                <p class="text-white">+852 6874 4115</p>
+                                <p class="text-gray-400 text-sm mt-1" data-i18n="contact.whatsappDesc">Quick response within 24 hours</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-blue-600 p-3 rounded-lg mr-4">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm" data-i18n="contact.locationLabel">Factory Location</p>
+                                <p class="text-white">Guangdong, China</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-blue-600 p-3 rounded-lg mr-4">
+                                <i class="fas fa-truck text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm" data-i18n="contact.shippingLabel">Shipping</p>
+                                <p class="text-white" data-i18n="contact.shippingValue">FOB/CIF terms available</p>
+                                <p class="text-gray-400 text-sm mt-1" data-i18n="contact.shippingDesc">Worldwide delivery</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 p-6 bg-blue-800/50 rounded-xl border border-blue-700">
+                        <h4 class="font-semibold mb-2"><i class="fas fa-info-circle mr-2"></i><span data-i18n="contact.hoursTitle">Business Hours</span></h4>
+                        <p class="text-gray-300 text-sm" data-i18n="contact.hours1">Monday - Friday: 9:00 - 18:00 (CST)</p>
+                        <p class="text-gray-300 text-sm" data-i18n="contact.hours2">Weekend: Emergency contacts available via WhatsApp</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-xl p-8">
+                    <h3 class="text-2xl font-semibold mb-6" data-i18n="contact.formTitle">Send Us a Message</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.name">Your Name</label>
+                            <input type="text" placeholder data-i18n-placeholder="contact.form.namePlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.company">Company Name</label>
+                            <input type="text" placeholder data-i18n-placeholder="contact.form.companyPlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.email">Email Address</label>
+                            <input type="email" placeholder data-i18n-placeholder="contact.form.emailPlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.product">Product Interest</label>
+                            <select class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option data-i18n="contact.form.selectPlaceholder">Select a product category</option>
+                                <option data-i18n="products.p1.name">Nursery Seedling Pots</option>
+                                <option data-i18n="products.p2.name">Large Decorative Pots</option>
+                                <option data-i18n="products.p3.name">Hanging Baskets</option>
+                                <option data-i18n="products.p4.name">Square Nursery Pots</option>
+                                <option data-i18n="products.p5.name">Classic Round Pots</option>
+                                <option data-i18n="products.p6.name">Custom Molds</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.message">Message</label>
+                            <textarea rows="4" placeholder data-i18n-placeholder="contact.form.messagePlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors" data-i18n="contact.form.submit">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-white py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-seedling text-green-500 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">PlanterPro</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="footer.desc">Your trusted manufacturer of quality plastic garden pots. Serving wholesale buyers and distributors worldwide since 2014.
+                    </p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-whatsapp text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-i18n="footer.products">Products</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#products" class="hover:text-white" data-i18n="products.p1.name">Nursery Seedling Pots</a></li>
+                        <li><a href="#products" class="hover:text-white" data-i18n="products.p2.name">Large Decorative Pots</a></li>
+                        <li><a href="#products" class="hover:text-white" data-i18n="products.p3.name">Hanging Baskets</a></li>
+                        <li><a href="#products" class="hover:text-white" data-i18n="products.p4.name">Square Nursery Pots</a></li>
+                        <li><a href="#products" class="hover:text-white" data-i18n="products.p6.name">Custom Molds</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-i18n="footer.forBuyers">For Buyers</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#features" class="hover:text-white" data-i18n="nav.why">Why Choose Us</a></li>
+                        <li><a href="#about" class="hover:text-white" data-i18n="nav.about">About Our Factory</a></li>
+                        <li><a href="#" class="hover:text-white" data-i18n="footer.catalog">Catalog Download</a></li>
+                        <li><a href="#" class="hover:text-white" data-i18n="footer.prices">Price List</a></li>
+                        <li><a href="#contact" class="hover:text-white" data-i18n="footer.quote">Request Quote</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-i18n="footer.contact">Contact Us</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-envelope mr-2"></i> gardensupply@zohomail.cn</li>
+                        <li><i class="fab fa-whatsapp mr-2"></i> <span data-i18n="footer.whatsapp">WhatsApp for quick quote</span></li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Jiangsu, China</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 PlanterPro (planterpro.cn). All rights reserved. <span data-i18n="footer.copyright">Premium plastic garden pots manufacturer.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox for full-size image viewing -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-close" onclick="closeLightbox()">&times;</div>
+        <div class="lightbox-nav lightbox-prev" onclick="prevLightbox(event)">&#10094;</div>
+        <img id="lightbox-img" class="lightbox-img" alt="">
+        <div class="lightbox-nav lightbox-next" onclick="nextLightbox(event)">&#10095;</div>
+    </div>
+
+    <script>
+        // Gallery functions
+        let currentLightboxProduct = '';
+        let currentLightboxIndex = 0;
+        let lightboxImages = [];
+
+        function changeMainImage(productId, thumbnail, src) {
+            // Remove active class from all thumbnails
+            document.querySelectorAll('#' + productId + '-thumbs .gallery-thumbnail').forEach(t => {
+                t.classList.remove('active');
+            });
+            // Add active class to clicked thumbnail
+            thumbnail.classList.add('active');
+            // Change main image
+            document.getElementById(productId + '-main').src = src;
+        }
+
+        // Open lightbox when clicking main image
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handler to main images for lightbox
+            for (let i = 1; i <= 6; i++) {
+                document.getElementById('product' + i + '-main').addEventListener('click', function() {
+                    openLightbox('product' + i, this.src);
+                });
+            }
+        });
+
+        function openLightbox(productId, currentSrc) {
+            currentLightboxProduct = productId;
+            lightboxImages = [];
+            currentLightboxIndex = 0;
+            
+            // Collect all images for this product
+            document.querySelectorAll('#' + productId + '-thumbs .gallery-thumbnail').forEach((thumb, index) => {
+                lightboxImages.push(thumb.src);
+                if (thumb.src === currentSrc) {
+                    currentLightboxIndex = index;
+                }
+            });
+            
+            document.getElementById('lightbox-img').src = currentSrc;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function prevLightbox(e) {
+            e.stopPropagation();
+            currentLightboxIndex = (currentLightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
+            document.getElementById('lightbox-img').src = lightboxImages[currentLightboxIndex];
+        }
+
+        function nextLightbox(e) {
+            e.stopPropagation();
+            currentLightboxIndex = (currentLightboxIndex + 1) % lightboxImages.length;
+            document.getElementById('lightbox-img').src = lightboxImages[currentLightboxIndex];
+        }
+
+        // Close lightbox with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.getElementById('lightbox').classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+
+        // Translations
+        const translations = {
+            en: {
+                pageTitle: "Premium Plastic Garden Pots - PlanterPro | Direct Manufacturer",
+                metaDescription: "PlanterPro - Your trusted manufacturer of high quality plastic garden pots for nurseries, garden centers and wholesale distributors.",
+                "nav.home": "Home",
+                "nav.products": "Products",
+                "nav.about": "About Us",
+                "nav.why": "Why Choose Us",
+                "nav.contact": "Contact",
+                "hero.title1": "Premium Quality",
+                "hero.title2": "Plastic Garden Pots",
+                "hero.subtitle": "Your trusted manufacturer of durable, eco-friendly plastic garden pots for nurseries, garden centers, and wholesale distributors.",
+                "hero.viewProducts": "View Products",
+                "hero.getQuote": "Get Quote",
+                "hero.exp": "Years Experience",
+                "hero.clients": "Happy Clients",
+                "hero.countries": "Countries Exported",
+                "products.title": "Our Product Range",
+                "products.subtitle": "High-quality plastic pots for every gardening need. Available in multiple sizes, colors, and specifications.",
+                "products.p1.name": "Nursery Seedling Pots",
+                "products.p1.desc": "Perfect for seed starting and nursery propagation. Available in 5cm to 15cm sizes.",
+                "products.p1.f1": "Sizes: 5cm - 15cm",
+                "products.p1.f2": "Drainage holes available",
+                "products.p1.f3": "Food-grade PP material",
+                "products.p2.name": "Large Decorative Pots",
+                "products.p2.desc": "Ideal for mature plants and decorative landscaping. Sturdy and durable.",
+                "products.p2.f1": "Sizes: 20cm - 40cm",
+                "products.p2.f2": "Multiple color options",
+                "products.p2.f3": "UV stabilized material",
+                "products.p3.name": "Hanging Basket Pots",
+                "products.p3.desc": "Beautiful hanging planters for balconies and patios. Complete with hanging hooks.",
+                "products.p3.f1": "Includes hook & chain",
+                "products.p3.f2": "Water retention design",
+                "products.p3.f3": "Various diameter options",
+                "products.p4.name": "Square Nursery Pots",
+                "products.p4.desc": "Space-saving square design for efficient nursery spacing and transport.",
+                "products.p4.f1": "Stackable design",
+                "products.p4.f2": "Maximizes space",
+                "products.p4.f3": "Easy labeling",
+                "products.p5.name": "Classic Round Pots",
+                "products.p5.desc": "Traditional round plastic pots for general gardening use. All standard sizes.",
+                "products.p5.f1": "All standard sizes",
+                "products.p5.f2": "Bulk packaging available",
+                "products.p5.f3": "Cost-effective pricing",
+                "products.p6.name": "Custom Molds & Sizes",
+                "products.p6.desc": "Custom-made plastic pots according to your specific requirements and designs.",
+                "products.p6.f1": "Custom colors available",
+                "products.p6.f2": "Logo printing possible",
+                "products.p6.f3": "OEM/ODM welcome",
+                "products.moq": "MOQ: {quantity} pieces",
+                "products.moqNeg": "MOQ: Negotiable",
+                "features.title": "Why Choose Our Plastic Pots",
+                "features.subtitle": "We combine quality manufacturing with competitive pricing for wholesale buyers",
+                "features.f1.title": "Eco-Friendly Material",
+                "features.f1.desc": "100% recyclable PP plastic, food-safe and non-toxic for healthy plant growth.",
+                "features.f2.title": "UV Stabilized",
+                "features.f2.desc": "Outdoor durability with UV protection prevents brittleness and fading.",
+                "features.f3.title": "Bulk Production",
+                "features.f3.desc": "Large production capacity with consistent quality for big orders.",
+                "features.f4.title": "Export Ready",
+                "features.f4.desc": "Experienced in exporting to 50+ countries with proper documentation.",
+                "custom.title": "Customization Available",
+                "custom.f1": "Custom colors to match your branding",
+                "custom.f2": "Logo printing on pots for brand recognition",
+                "custom.f3": "Different drainage hole configurations",
+                "custom.f4": "Custom packaging according to your requirements",
+                "custom.cta": "Discuss Your Custom Needs →",
+                "about.title": "About Our Manufacturing",
+                "about.p1": "With over 10 years of experience in plastic injection molding for horticulture, we specialize in producing high-quality plastic garden pots for the global market.",
+                "about.p2": "Our modern factory is equipped with advanced injection molding machines, allowing us to maintain consistent quality while handling large volume orders efficiently.",
+                "about.f1.title": "Modern Equipment",
+                "about.f1.desc": "30+ injection molding machines",
+                "about.f2.title": "QC Testing",
+                "about.f2.desc": "Strict quality control",
+                "about.f3.title": "Global Export",
+                "about.f3.desc": "50+ countries served",
+                "about.f4.title": "On-Time Delivery",
+                "about.f4.desc": "Reliable production schedule",
+                "contact.title": "Get in Touch",
+                "contact.subtitle": "Ready to place an order or have questions? Contact us today for a quote.",
+                "contact.infoTitle": "Contact Information",
+                "contact.emailLabel": "Email",
+                "contact.whatsappLabel": "WhatsApp",
+                "contact.whatsappDesc": "Quick response within 24 hours",
+                "contact.locationLabel": "Factory Location",
+                "contact.shippingLabel": "Shipping",
+                "contact.shippingValue": "FOB/CIF terms available",
+                "contact.shippingDesc": "Worldwide delivery",
+                "contact.hoursTitle": "Business Hours",
+                "contact.hours1": "Monday - Friday: 9:00 - 18:00 (CST)",
+                "contact.hours2": "Weekend: Emergency contacts available via WhatsApp",
+                "contact.formTitle": "Send Us a Message",
+                "contact.form.name": "Your Name",
+                "contact.form.namePlaceholder": "Your full name",
+                "contact.form.company": "Company Name",
+                "contact.form.companyPlaceholder": "Your company name",
+                "contact.form.email": "Email Address",
+                "contact.form.emailPlaceholder": "your@email.com",
+                "contact.form.product": "Product Interest",
+                "contact.form.message": "Message",
+                "contact.form.messagePlaceholder": "Tell us about your quantity requirements and any custom needs...",
+                "contact.form.submit": "Send Message",
+                "contact.form.selectPlaceholder": "Select a product category",
+                "footer.desc": "Your trusted manufacturer of quality plastic garden pots. Serving wholesale buyers and distributors worldwide since 2014.",
+                "footer.products": "Products",
+                "footer.forBuyers": "For Buyers",
+                "footer.contact": "Contact Us",
+                "footer.catalog": "Catalog Download",
+                "footer.prices": "Price List",
+                "footer.quote": "Request Quote",
+                "footer.whatsapp": "WhatsApp for quick quote",
+                "footer.copyright": "Premium plastic garden pots manufacturer."
+            },
+            es: {
+                pageTitle: "Macetas de Plástico Premium - PlanterPro | Fabricante Directo",
+                metaDescription: "PlanterPro - Su fabricante confiable de macetas de plástico de alta calidad para viveros, centros de jardinería y distribuidores mayoristas.",
+                "nav.home": "Inicio",
+                "nav.products": "Productos",
+                "nav.about": "Nosotros",
+                "nav.why": "Por qué Nosotros",
+                "nav.contact": "Contacto",
+                "hero.title1": "Calidad Premium",
+                "hero.title2": "Macetas de Plástico",
+                "hero.subtitle": "Su fabricante confiable de macetas de plástico duraderas y ecológicas para viveros, centros de jardinería y distribuidores mayoristas.",
+                "hero.viewProducts": "Ver Productos",
+                "hero.getQuote": "Solicitar Cotización",
+                "hero.exp": "Años de Experiencia",
+                "hero.clients": "Clientes Satisfechos",
+                "hero.countries": "Países Exportados",
+                "products.title": "Nuestra Gama de Productos",
+                "products.subtitle": "Macetas de plástico de alta calidad para cada necesidad de jardinería. Disponible en múltiples tamaños, colores y especificaciones.",
+                "products.p1.name": "Macetas para Vivero",
+                "products.p1.desc": "Perfectas para germinación y propagación en vivero. Disponibles en tamaños de 5cm a 15cm.",
+                "products.p1.f1": "Tamaños: 5cm - 15cm",
+                "products.p1.f2": "Agujeros de drenaje disponibles",
+                "products.p1.f3": "Material PP alimenticio",
+                "products.p2.name": "Macetas Decorativas Grandes",
+                "products.p2.desc": "Ideales para plantas maduras y paisajismo decorativo. Robustas y duraderas.",
+                "products.p2.f1": "Tamaños: 20cm - 40cm",
+                "products.p2.f2": "Múltiples opciones de color",
+                "products.p2.f3": "Material estabilizado UV",
+                "products.p3.name": "Macetas para Colgar",
+                "products.p3.desc": "Hermosas macetas colgantes para balcones y patios. Incluye ganchos para colgar.",
+                "products.p3.f1": "Incluye gancho y cadena",
+                "products.p3.f2": "Diseño con retención de agua",
+                "products.p3.f3": "Varias opciones de diámetro",
+                "products.p4.name": "Macetas Cuadradas para Vivero",
+                "products.p4.desc": "Diseño cuadrado que ahorra espacio para distribución eficiente en vivero y transporte.",
+                "products.p4.f1": "Diseño apilable",
+                "products.p4.f2": "Maximiza el espacio",
+                "products.p4.f3": "Fácil etiquetado",
+                "products.p5.name": "Macetas Redondas Clásicas",
+                "products.p5.desc": "Macetas de plástico redondas tradicionales para jardinería general. Todos los tamaños estándar.",
+                "products.p5.f1": "Todos los tamaños estándar",
+                "products.p5.f2": "Embalaje a granel disponible",
+                "products.p5.f3": "Precios económicos",
+                "products.p6.name": "Moldes y Tamaños Personalizados",
+                "products.p6.desc": "Macetas de plástico fabricadas según sus requisitos y diseños específicos.",
+                "products.p6.f1": "Colores personalizados disponibles",
+                "products.p6.f2": "Impresión de logotipo posible",
+                "products.p6.f3": "OEM/ODM bienvenido",
+                "products.moq": "MOQ: {quantity} unidades",
+                "products.moqNeg": "MOQ: Negociable",
+                "features.title": "Por qué Elegir Nuestras Macetas",
+                "features.subtitle": "Combinamos fabricación de calidad con precios competitivos para compradores mayoristas",
+                "features.f1.title": "Material Ecológico",
+                "features.f1.desc": "Plástico PP 100% reciclable, seguro para alimentos y no tóxico para crecimiento saludable de plantas.",
+                "features.f2.title": "Estabilizado UV",
+                "features.f2.desc": "Durabilidad exterior con protección UV evita fragilidad y decoloración.",
+                "features.f3.title": "Producción a Granel",
+                "features.f3.desc": "Gran capacidad de producción con calidad consistente para pedidos grandes.",
+                "features.f4.title": "Listo para Exportar",
+                "features.f4.desc": "Experimentados en exportar a más de 50 países con documentación adecuada.",
+                "custom.title": "Personalización Disponible",
+                "custom.f1": "Colores personalizados para coincidir con su marca",
+                "custom.f2": "Impresión de logotipo en macetas para reconocimiento de marca",
+                "custom.f3": "Diferentes configuraciones de agujeros de drenaje",
+                "custom.f4": "Embalaje personalizado según sus requisitos",
+                "custom.cta": "Converse sus Necesidades Personalizadas →",
+                "about.title": "Sobre Nuestra Fabricación",
+                "about.p1": "Con más de 10 años de experiencia en moldeo por inyección de plástico para horticultura, nos especializamos en producir macetas de plástico de alta calidad para el mercado global.",
+                "about.p2": "Nuestra fábrica moderna está equipada con máquinas de inyección avanzadas, lo que nos permite mantener calidad consistente mientras manejamos pedidos de gran volumen eficientemente.",
+                "about.f1.title": "Equipo Moderno",
+                "about.f1.desc": "Más de 30 máquinas de inyección",
+                "about.f2.title": "Control de Calidad",
+                "about.f2.desc": "Control de calidad estricto",
+                "about.f3.title": "Exportación Global",
+                "about.f3.desc": "Más de 50 países atendidos",
+                "about.f4.title": "Entrega a Tiempo",
+                "about.f4.desc": "Programa de producción confiable",
+                "contact.title": "Contáctenos",
+                "contact.subtitle": "¿Listo para hacer un pedido o tiene preguntas? Contáctenos hoy para una cotización.",
+                "contact.infoTitle": "Información de Contacto",
+                "contact.emailLabel": "Correo",
+                "contact.whatsappLabel": "WhatsApp",
+                "contact.whatsappDesc": "Respuesta rápida en 24 horas",
+                "contact.locationLabel": "Ubicación de Fábrica",
+                "contact.shippingLabel": "Envío",
+                "contact.shippingValue": "Términos FOB/CIF disponibles",
+                "contact.shippingDesc": "Entrega mundial",
+                "contact.hoursTitle": "Horario Comercial",
+                "contact.hours1": "Lunes - Viernes: 9:00 - 18:00 (CST)",
+                "contact.hours2": "Fin de semana: Contactos de emergencia disponibles por WhatsApp",
+                "contact.formTitle": "Envíenos un Mensaje",
+                "contact.form.name": "Su Nombre",
+                "contact.form.namePlaceholder": "Su nombre completo",
+                "contact.form.company": "Nombre de Empresa",
+                "contact.form.companyPlaceholder": "Nombre de su empresa",
+                "contact.form.email": "Dirección de Correo",
+                "contact.form.emailPlaceholder": "su@correo.com",
+                "contact.form.product": "Interés en Producto",
+                "contact.form.message": "Mensaje",
+                "contact.form.messagePlaceholder": "Cuéntenos sobre sus requisitos de cantidad y cualquier necesidad personalizada...",
+                "contact.form.submit": "Enviar Mensaje",
+                "contact.form.selectPlaceholder": "Seleccione una categoría de producto",
+                "footer.desc": "Su fabricante confiable de macetas de plástico de calidad. Sirviendo compradores mayoristas y distribuidores en todo el mundo desde 2014.",
+                "footer.products": "Productos",
+                "footer.forBuyers": "Para Compradores",
+                "footer.contact": "Contáctenos",
+                "footer.catalog": "Descargar Catálogo",
+                "footer.prices": "Lista de Precios",
+                "footer.quote": "Solicitar Cotización",
+                "footer.whatsapp": "WhatsApp para cotización rápida",
+                "footer.copyright": "Fabricante premium de macetas de plástico."
+            },
+            fr: {
+                pageTitle: "Pot en Plastique Premium - PlanterPro | Fabricant Direct",
+                metaDescription: "PlanterPro - Votre fabricant de confiance de pots en plastique de haute qualité pour pépinières, jardineries et distributeurs en gros.",
+                "nav.home": "Accueil",
+                "nav.products": "Produits",
+                "nav.about": "À Propos",
+                "nav.why": "Pourquoi Nous Choisir",
+                "nav.contact": "Contact",
+                "hero.title1": "Qualité Premium",
+                "hero.title2": "Pots de Jardin en Plastique",
+                "hero.subtitle": "Votre fabricant de confiance de pots en plastique durables et écologiques pour pépinières, jardineries et distributeurs en gros.",
+                "hero.viewProducts": "Voir les Produits",
+                "hero.getQuote": "Demander un Devis",
+                "hero.exp": "Ans d'Expérience",
+                "hero.clients": "Clients Satisfaits",
+                "hero.countries": "Pays Exportés",
+                "products.title": "Notre Gamme de Produits",
+                "products.subtitle": "Pots en plastique de haute qualité pour tous vos besoins de jardinage. Disponible en plusieurs tailles, couleurs et spécifications.",
+                "products.p1.name": "Pots pour Semis",
+                "products.p1.desc": "Parfait pour le démarrage des semis et la propagation en pépinière. Disponible en tailles de 5cm à 15cm.",
+                "products.p1.f1": "Tailles: 5cm - 15cm",
+                "products.p1.f2": "Trous de drainage disponibles",
+                "products.p1.f3": "Matériau PP de qualité alimentaire",
+                "products.p2.name": "Grands Pots Décoratifs",
+                "products.p2.desc": "Idéal pour plantes matures et aménagement paysager décoratif. Solide et durable.",
+                "products.p2.f1": "Tailles: 20cm - 40cm",
+                "products.p2.f2": "Multiples options de couleur",
+                "products.p2.f3": "Matériau stabilisé UV",
+                "products.p3.name": "Paniers Suspendus",
+                "products.p3.desc": "Belles jardinières suspendues pour balcons et terrasses. Complètes avec crochets de suspension.",
+                "products.p3.f1": "Inclut crochet et chaîne",
+                "products.p3.f2": "Conception avec rétention d'eau",
+                "products.p3.f3": "Diverses options de diamètre",
+                "products.p4.name": "Pots Carrées pour Pépinière",
+                "products.p4.desc": "Design carré gain de place pour un espacement efficace et transport en pépinière.",
+                "products.p4.f1": "Design empilable",
+                "products.p4.f2": "Maximise l'espace",
+                "products.p4.f3": "Étiquetage facile",
+                "products.p5.name": "Pots Ronds Classiques",
+                "products.p5.desc": "Pots en plastique ronds traditionnels pour jardinage général. Toutes tailles standard.",
+                "products.p5.f1": "Toutes tailles standard",
+                "products.p5.f2": "Emballage en vrac disponible",
+                "products.p5.f3": "Prix économiques",
+                "products.p6.name": "Moules et Tailles Personalisés",
+                "products.p6.desc": "Pots en plastique fabriqués selon vos exigences et conceptions spécifiques.",
+                "products.p6.f1": "Couleurs personnalisées disponibles",
+                "products.p6.f2": "Impression de logo possible",
+                "products.p6.f3": "OEM/ODM bienvenue",
+                "products.moq": "Quantité minimale: {quantity} pièces",
+                "products.moqNeg": "Quantité minimale: Négociable",
+                "features.title": "Pourquoi Choisir Nos Pots en Plastique",
+                "features.subtitle": "Nous combinons fabrication de qualité avec prix compétitifs pour les acheteurs en gros",
+                "features.f1.title": "Matériau Écologique",
+                "features.f1.desc": "Plastique PP 100% recyclable, sûr alimentaire et non toxique pour une croissance saine des plantes.",
+                "features.f2.title": "Stabilisé UV",
+                "features.f2.desc": "Durabilité extérieure avec protection UV empêche la fragilité et la décoloration.",
+                "features.f3.title": "Production en Masse",
+                "features.f3.desc": "Grande capacité de production avec qualité constante pour les grandes commandes.",
+                "features.f4.title": "Prêt à l'Export",
+                "features.f4.desc": "Expérimentés dans l'exportation vers plus de 50 pays avec documentation appropriée.",
+                "custom.title": "Personnalisation Disponible",
+                "custom.f1": "Couleurs personnalisées pour correspondre à votre marque",
+                "custom.f2": "Impression de logo sur les pots pour la reconnaissance de marque",
+                "custom.f3": "Différentes configurations de trous de drainage",
+                "custom.f4": "Emballage personnalisé selon vos exigences",
+                "custom.cta": "Discutez vos Besoins Personnalisés →",
+                "about.title": "À Propos de Notre Fabrication",
+                "about.p1": "Avec plus de 10 ans d'expérience dans le moulage par injection plastique pour l'horticulture, nous sommes spécialisés dans la production de pots de jardin en plastique de haute qualité pour le marché mondial.",
+                "about.p2": "Notre usine moderne est équipée de machines d'injection avancées, nous permettant de maintenir une qualité constante tout en traitant efficacement les commandes de grand volume.",
+                "about.f1.title": "Équipement Moderne",
+                "about.f1.desc": "Plus de 30 machines d'injection",
+                "about.f2.title": "Contrôle Qualité",
+                "about.f2.desc": "Contrôle qualité strict",
+                "about.f3.title": "Export Mondial",
+                "about.f3.desc": "Plus de 50 pays servis",
+                "about.f4.title": "Livraison à l'Heure",
+                "about.f4.desc": "Programme de production fiable",
+                "contact.title": "Contactez-nous",
+                "contact.subtitle": "Prêt à commander ou avez-vous des questions? Contactez-nous aujourd'hui pour un devis.",
+                "contact.infoTitle": "Informations de Contact",
+                "contact.emailLabel": "Email",
+                "contact.whatsappLabel": "WhatsApp",
+                "contact.whatsappDesc": "Réponse rapide en 24h",
+                "contact.locationLabel": "Usine",
+                "contact.shippingLabel": "Livraison",
+                "contact.shippingValue": "Conditions FOB/CIF disponibles",
+                "contact.shippingDesc": "Livraison mondiale",
+                "contact.hoursTitle": "Heures d'Ouverture",
+                "contact.hours1": "Lundi - Vendredi: 9:00 - 18:00 (CST)",
+                "contact.hours2": "Weekend: Contacts d'urgence disponibles via WhatsApp",
+                "contact.formTitle": "Envoyez-nous un Message",
+                "contact.form.name": "Votre Nom",
+                "contact.form.namePlaceholder": "Votre nom complet",
+                "contact.form.company": "Nom de l'Entreprise",
+                "contact.form.companyPlaceholder": "Nom de votre entreprise",
+                "contact.form.email": "Adresse Email",
+                "contact.form.emailPlaceholder": "votre@email.com",
+                "contact.form.product": "Intérêt Produit",
+                "contact.form.message": "Message",
+                "contact.form.messagePlaceholder": "Parlez-nous de vos besoins en quantité et toute demande personnalisée...",
+                "contact.form.submit": "Envoyer le Message",
+                "contact.form.selectPlaceholder": "Sélectionnez une catégorie de produit",
+                "footer.desc": "Votre fabricant de confiance de pots de jardin en plastique de qualité. Servant les acheteurs en gros et distributeurs dans le monde entier depuis 2014.",
+                "footer.products": "Produits",
+                "footer.forBuyers": "Pour les Acheteurs",
+                "footer.contact": "Contactez-nous",
+                "footer.catalog": "Télécharger Catalogue",
+                "footer.prices": "Liste de Prix",
+                "footer.quote": "Demander un Devis",
+                "footer.whatsapp": "WhatsApp pour devis rapide",
+                "footer.copyright": "Fabricant premium de pots de jardin en plastique."
+            },
+            zh: {
+                pageTitle: "優質塑膠花盆 - PlanterPro | 直接製造商",
+                metaDescription: "PlanterPro - 您值得信賴的高品質塑膠花盆製造商，供應苗圃、園藝中心和批發商。",
+                "nav.home": "首頁",
+                "nav.products": "產品",
+                "nav.about": "關於我們",
+                "nav.why": "為什麼選擇我們",
+                "nav.contact": "聯絡我們",
+                "hero.title1": "優品質",
+                "hero.title2": "塑膠花盆",
+                "hero.subtitle": "您值得信賴的耐用環保塑膠花盆製造商，供應苗圃、園藝中心和批發經銷商。",
+                "hero.viewProducts": "查看產品",
+                "hero.getQuote": "獲得報價",
+                "hero.exp": "年經驗",
+                "hero.clients": "滿意客戶",
+                "hero.countries": "出口國家",
+                "products.title": "我們的產品系列",
+                "products.subtitle": "高品質塑膠花盆，滿足各種園藝需求。提供多種尺寸、顏色和規格。",
+                "products.p1.name": "育苗盆",
+                "products.p1.desc": "非常適合播種和育苗。提供 5cm 至 15cm 尺寸。",
+                "products.p1.f1": "尺寸: 5cm - 15cm",
+                "products.p1.f2": "可提供排水孔",
+                "products.p1.f3": "食品級 PP 材料",
+                "products.p2.name": "大型裝飾花盆",
+                "products.p2.desc": "適合成熟植物和裝飾景觀。堅固耐用。",
+                "products.p2.f1": "尺寸: 20cm - 40cm",
+                "products.p2.f2": "多種顏色選擇",
+                "products.p2.f3": "UV 穩定材料",
+                "products.p3.name": "吊籃花盆",
+                "products.p3.desc": "美麗的吊籃花盆，適合陽台和庭院。包含吊鉤。",
+                "products.p3.f1": "包含吊鉤和鏈條",
+                "products.p3.f2": "保水設計",
+                "products.p3.f3": "多種直徑選擇",
+                "products.p4.name": "方形育苗盆",
+                "products.p4.desc": "節省空間的方形設計，有效提高育苗間距和運輸效率。",
+                "products.p4.f1": "可堆疊設計",
+                "products.p4.f2": "最大化空間利用",
+                "products.p4.f3": "方便標籤",
+                "products.p5.name": "經典圓形花盆",
+                "products.p5.desc": "傳統圓形塑膠花盆，適合一般園藝使用。所有標準尺寸。",
+                "products.p5.f1": "所有標準尺寸",
+                "products.p5.f2": "可提供散裝包裝",
+                "products.p5.f3": "符合成本效益定價",
+                "products.p6.name": "定制模具和尺寸",
+                "products.p6.desc": "根據您的特定要求和設計定制塑膠花盆。",
+                "products.p6.f1": "可提供定制顏色",
+                "products.p6.f2": "可進行標誌印刷",
+                "products.p6.f3": "歡迎 OEM/ODM",
+                "products.moq": "最小訂單: {quantity} 個",
+                "products.moqNeg": "最小訂單: 可議",
+                "features.title": "為什麼選擇我們的塑膠花盆",
+                "features.subtitle": "我們為批發買家結合品質製造和有競爭力的價格",
+                "features.f1.title": "環保材料",
+                "features.f1.desc": "100% 可回收 PP 塑膠，食品安全無毒，促進植物健康生長。",
+                "features.f2.title": "UV 穩定",
+                "features.f2.desc": "戶外耐久性，UV 保護防止脆化和褪色。",
+                "features.f3.title": "批量生產",
+                "features.f3.desc": "大生產能力，大訂單品質一致。",
+                "features.f4.title": "準備出口",
+                "features.f4.desc": "出口 50+ 國家經驗，具備完整文件。",
+                "custom.title": "可提供定制",
+                "custom.f1": "定制顏色匹配您的品牌",
+                "custom.f2": "花盆上標誌印刷提高品牌識別",
+                "custom.f3": "不同排水孔配置",
+                "custom.f4": "根據您的要求定制包裝",
+                "custom.cta": "討論您的定制需求 →",
+                "about.title": "關於我們的製造",
+                "about.p1": "憑藉 10 多年園藝塑膠注塑經驗，我們專門為全球市場生產高品質塑膠花盆。",
+                "about.p2": "我們現代化工廠配備先進注塑機，讓我們在處理大訂單時保持一致品質，效率高。",
+                "about.f1.title": "現代設備",
+                "about.f1.desc": "30+ 注塑機",
+                "about.f2.title": "質量檢測",
+                "about.f2.desc": "嚴格質量控制",
+                "about.f3.title": "全球出口",
+                "about.f3.desc": "服務 50+ 國家",
+                "about.f4.title": "準時交貨",
+                "about.f4.desc": "可靠生產計劃",
+                "contact.title": "聯絡我們",
+                "contact.subtitle": "準備下單或有問題？今天聯絡我們獲得報價。",
+                "contact.infoTitle": "聯絡資訊",
+                "contact.emailLabel": "電子郵件",
+                "contact.whatsappLabel": "WhatsApp",
+                "contact.whatsappDesc": "24 小時內快速回覆",
+                "contact.locationLabel": "工廠位置",
+                "contact.shippingLabel": "運輸",
+                "contact.shippingValue": "可提供 FOB/CIF 條款",
+                "contact.shippingDesc": "全球運輸",
+                "contact.hoursTitle": "營業時間",
+                "contact.hours1": "週一 - 週五: 9:00 - 18:00 (CST)",
+                "contact.hours2": "週末: 可通過 WhatsApp 緊急聯絡",
+                "contact.formTitle": "發送訊息給我們",
+                "contact.form.name": "您的姓名",
+                "contact.form.namePlaceholder": "您的全名",
+                "contact.form.company": "公司名稱",
+                "contact.form.companyPlaceholder": "您的公司名稱",
+                "contact.form.email": "電子郵件地址",
+                "contact.form.emailPlaceholder": "your@email.com",
+                "contact.form.product": "產品興趣",
+                "contact.form.message": "訊息",
+                "contact.form.messagePlaceholder": "告訴我們您的數量需求和任何定制需求...",
+                "contact.form.submit": "發送訊息",
+                "contact.form.selectPlaceholder": "選擇產品類別",
+                "footer.desc": "您值得信賴的優質塑膠花盆製造商。自 2014 年以來服務全球批發買家和經銷商。",
+                "footer.products": "產品",
+                "footer.forBuyers": "對於買家",
+                "footer.contact": "聯絡我們",
+                "footer.catalog": "下載目錄",
+                "footer.prices": "價格表",
+                "footer.quote": "索取報價",
+                "footer.whatsapp": "WhatsApp 快速報價",
+                "footer.copyright": "優質塑膠花盆製造商。"
+            }
+        };
+
+        // Current language
+        let currentLang = 'en';
+
+        // Function to set language
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // Update active state
+            document.querySelectorAll('.lang-switcher a').forEach(el => {
+                el.classList.remove('active');
+                el.classList.add('text-gray-600');
+            });
+            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+            document.querySelector(`[data-lang="${lang}"]`).classList.remove('text-gray-600');
+            
+            // Update all translated elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[lang][key]) {
+                    el.setAttribute('placeholder', translations[lang][key]);
+                }
+            });
+            
+            // Update title and meta
+            document.title = translations[lang]['pageTitle'];
+            document.querySelector('meta[name="description"]').setAttribute('content', translations[lang]['metaDescription']);
+            
+            // Save to localStorage
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Language dropdown toggle
+        document.getElementById('language-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            document.getElementById('language-menu').classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            document.getElementById('language-menu').classList.add('hidden');
+        });
+
+        // Language selection handler
+        document.querySelectorAll('#language-menu a[data-lang]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                setLanguage(lang);
+                // Update button text
+                const langText = {
+                    en: 'EN',
+                    es: 'ES',
+                    fr: 'FR',
+                    zh: '繁'
+                };
+                document.getElementById('current-lang-text').textContent = langText[lang];
+                document.getElementById('language-menu').classList.add('hidden');
+            });
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const messages = {
+                en: 'Thank you for your message! We will get back to you soon via email or WhatsApp.',
+                es: '¡Gracias por tu mensaje! Te responderemos pronto por correo electrónico o WhatsApp.',
+                fr: 'Merci pour votre message! Nous vous répondrons bientôt par email ou WhatsApp.',
+                zh: '感謝您的訊息！我們很快會通過電子郵件或 WhatsApp 回覆您。'
+            };
+            alert(messages[currentLang]);
+            this.reset();
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Load preferred language from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && translations[savedLang]) {
+                setLanguage(savedLang);
+            }
+        });
+    </script>
+</body>
+</html>
