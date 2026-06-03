@@ -171,6 +171,8 @@
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#home" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.home">Home</a>
                         <a href="#products" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.products">Products</a>
+                        <a href="#order-process" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.orderProcess">Order Process</a>
+                        <a href="#inquiry" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.inquiry">Inquiry Form</a>
                         <a href="#about" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.about">About Us</a>
                         <a href="#features" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.why">Why Choose Us</a>
                         <a href="#contact" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium" data-i18n="nav.contact">Contact</a>
@@ -203,6 +205,8 @@
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="#home" class="block px-3 py-2 text-gray-900" data-i18n="nav.home">Home</a>
                 <a href="#products" class="block px-3 py-2 text-gray-600" data-i18n="nav.products">Products</a>
+                <a href="#order-process" class="block px-3 py-2 text-gray-600" data-i18n="nav.orderProcess">Order Process</a>
+                <a href="#inquiry" class="block px-3 py-2 text-gray-600" data-i18n="nav.inquiry">Inquiry Form</a>
                 <a href="#about" class="block px-3 py-2 text-gray-600" data-i18n="nav.about">About Us</a>
                 <a href="#features" class="block px-3 py-2 text-gray-600" data-i18n="nav.why">Why Choose Us</a>
                 <a href="#contact" class="block px-3 py-2 text-gray-600" data-i18n="nav.contact">Contact</a>
@@ -227,9 +231,13 @@
                             <i class="fas fa-shopping-basket mr-2"></i>
                             View Products
                         </a>
-                        <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition-colors inline-block text-center" data-i18n="hero.getQuote">
-                            <i class="fas fa-envelope mr-2"></i>
+                        <a href="#inquiry" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition-colors inline-block text-center" data-i18n="hero.getQuote">
+                            <i class="fas fa-file-signature mr-2"></i>
                             Get Quote
+                        </a>
+                        <a href="https://wa.me/85268744115?text=Hello%20PlanterPro%2C%20I%20want%20to%20request%20a%20quote%20for%20plastic%20garden%20pots." target="_blank" rel="noopener" class="bg-green-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-600 transition-colors inline-block text-center" data-i18n="hero.whatsapp">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            WhatsApp Now
                         </a>
                     </div>
                     <div class="mt-8 flex items-center gap-6">
@@ -303,8 +311,12 @@
                                 <span data-i18n="products.p5.f3">Cost-effective pricing</span>
                             </li>
                         </ul>
-                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4">
+                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4 space-y-3">
                             <p class="text-sm text-gray-500" data-i18n="products.moq">MOQ: 50 pieces</p>
+                            <div class="grid grid-cols-2 gap-2">
+                                <a href="#inquiry" onclick="selectProductFromCard(this)" class="text-center bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors" data-i18n="products.requestQuote">Request Quote</a>
+                                <a href="#inquiry" onclick="selectProductFromCard(this, 'Sample Order')" class="text-center border border-blue-600 text-blue-700 px-3 py-2 rounded-lg text-sm font-semibold hover:bg-blue-50 transition-colors" data-i18n="products.orderSample">Order Sample</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -343,8 +355,12 @@
                                 <span data-i18n="products.p2.f3">UV stabilized material</span>
                             </li>
                         </ul>
-                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4">
+                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4 space-y-3">
                             <p class="text-sm text-gray-500" data-i18n="products.moq">MOQ: 50 pieces</p>
+                            <div class="grid grid-cols-2 gap-2">
+                                <a href="#inquiry" onclick="selectProductFromCard(this)" class="text-center bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors" data-i18n="products.requestQuote">Request Quote</a>
+                                <a href="#inquiry" onclick="selectProductFromCard(this, 'Sample Order')" class="text-center border border-blue-600 text-blue-700 px-3 py-2 rounded-lg text-sm font-semibold hover:bg-blue-50 transition-colors" data-i18n="products.orderSample">Order Sample</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -382,8 +398,12 @@
                                 <span data-i18n="products.p3.f3">Various diameter options</span>
                             </li>
                         </ul>
-                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4">
+                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4 space-y-3">
                             <p class="text-sm text-gray-500" data-i18n="products.moq">MOQ: 50 pieces</p>
+                            <div class="grid grid-cols-2 gap-2">
+                                <a href="#inquiry" onclick="selectProductFromCard(this)" class="text-center bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors" data-i18n="products.requestQuote">Request Quote</a>
+                                <a href="#inquiry" onclick="selectProductFromCard(this, 'Sample Order')" class="text-center border border-blue-600 text-blue-700 px-3 py-2 rounded-lg text-sm font-semibold hover:bg-blue-50 transition-colors" data-i18n="products.orderSample">Order Sample</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -421,8 +441,12 @@
                                 <span data-i18n="products.p4.f3">Easy labeling</span>
                             </li>
                         </ul>
-                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4">
+                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4 space-y-3">
                             <p class="text-sm text-gray-500" data-i18n="products.moq">MOQ: 50 pieces</p>
+                            <div class="grid grid-cols-2 gap-2">
+                                <a href="#inquiry" onclick="selectProductFromCard(this)" class="text-center bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors" data-i18n="products.requestQuote">Request Quote</a>
+                                <a href="#inquiry" onclick="selectProductFromCard(this, 'Sample Order')" class="text-center border border-blue-600 text-blue-700 px-3 py-2 rounded-lg text-sm font-semibold hover:bg-blue-50 transition-colors" data-i18n="products.orderSample">Order Sample</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -455,8 +479,12 @@
                                 <span data-i18n="products.p1.f3">Food-grade PP material</span>
                             </li>
                         </ul>
-                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4">
+                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4 space-y-3">
                             <p class="text-sm text-gray-500" data-i18n="products.moq">MOQ: 50 pieces</p>
+                            <div class="grid grid-cols-2 gap-2">
+                                <a href="#inquiry" onclick="selectProductFromCard(this)" class="text-center bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors" data-i18n="products.requestQuote">Request Quote</a>
+                                <a href="#inquiry" onclick="selectProductFromCard(this, 'Sample Order')" class="text-center border border-blue-600 text-blue-700 px-3 py-2 rounded-lg text-sm font-semibold hover:bg-blue-50 transition-colors" data-i18n="products.orderSample">Order Sample</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -489,8 +517,12 @@
                                 <span data-i18n="products.p6.f3">OEM/ODM welcome</span>
                             </li>
                         </ul>
-                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4">
+                        <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4 space-y-3">
                             <p class="text-sm text-gray-500" data-i18n="products.moqNeg">MOQ: Negotiable</p>
+                            <div class="grid grid-cols-2 gap-2">
+                                <a href="#inquiry" onclick="selectProductFromCard(this)" class="text-center bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors" data-i18n="products.requestQuote">Request Quote</a>
+                                <a href="#inquiry" onclick="selectProductFromCard(this, 'Sample Order')" class="text-center border border-blue-600 text-blue-700 px-3 py-2 rounded-lg text-sm font-semibold hover:bg-blue-50 transition-colors" data-i18n="products.orderSample">Order Sample</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -572,6 +604,42 @@
         </div>
     </section>
 
+    <!-- Order Process Section -->
+    <section id="order-process" class="section-padding bg-blue-950 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-blue-300 font-semibold uppercase tracking-widest mb-3" data-i18n="process.kicker">B2B Ordering Made Clear</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="process.title">Inquiry, Quotation, Payment, Shipment</h2>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto" data-i18n="process.subtitle">Submit your product requirements first. We confirm MOQ, packing, shipping cost and payment method before production.</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white/10 border border-white/10 rounded-2xl p-6">
+                    <div class="w-12 h-12 rounded-full bg-yellow-300 text-blue-950 flex items-center justify-center font-bold text-xl mb-4">1</div>
+                    <h3 class="font-bold text-xl mb-2" data-i18n="process.s1.title">Submit Inquiry</h3>
+                    <p class="text-blue-100" data-i18n="process.s1.desc">Tell us the model, quantity, color, logo needs and destination country.</p>
+                </div>
+                <div class="bg-white/10 border border-white/10 rounded-2xl p-6">
+                    <div class="w-12 h-12 rounded-full bg-yellow-300 text-blue-950 flex items-center justify-center font-bold text-xl mb-4">2</div>
+                    <h3 class="font-bold text-xl mb-2" data-i18n="process.s2.title">Receive Quotation</h3>
+                    <p class="text-blue-100" data-i18n="process.s2.desc">We confirm unit price, sample fee, lead time, packing and FOB/CIF shipping terms.</p>
+                </div>
+                <div class="bg-white/10 border border-white/10 rounded-2xl p-6">
+                    <div class="w-12 h-12 rounded-full bg-yellow-300 text-blue-950 flex items-center justify-center font-bold text-xl mb-4">3</div>
+                    <h3 class="font-bold text-xl mb-2" data-i18n="process.s3.title">Confirm Payment</h3>
+                    <p class="text-blue-100" data-i18n="process.s3.desc">Sample orders can use PayPal. Bulk orders usually use T/T deposit and balance.</p>
+                </div>
+                <div class="bg-white/10 border border-white/10 rounded-2xl p-6">
+                    <div class="w-12 h-12 rounded-full bg-yellow-300 text-blue-950 flex items-center justify-center font-bold text-xl mb-4">4</div>
+                    <h3 class="font-bold text-xl mb-2" data-i18n="process.s4.title">Production & Shipment</h3>
+                    <p class="text-blue-100" data-i18n="process.s4.desc">We arrange production, quality check, packing and export shipping documents.</p>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="#inquiry" class="inline-block bg-yellow-300 text-blue-950 px-8 py-4 rounded-lg font-bold hover:bg-yellow-200 transition-colors" data-i18n="process.cta">Start Your Order Inquiry</a>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="section-padding bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -622,104 +690,146 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section-padding bg-gray-900 text-white">
+    <!-- Inquiry & Contact Section -->
+    <section id="inquiry" class="section-padding bg-gray-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="contact.title">Get in Touch</h2>
-                <p class="text-xl text-gray-300" data-i18n="contact.subtitle">Ready to place an order or have questions? Contact us today for a quote.</p>
+                <p class="text-blue-300 font-semibold uppercase tracking-widest mb-3" data-i18n="inquiry.kicker">Factory Direct Inquiry</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="inquiry.title">Inquiry & Sample Order Form</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-i18n="inquiry.subtitle">Send us your requirements. We will reply with quotation, sample cost and shipping suggestion within 24 hours.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6" data-i18n="contact.infoTitle">Contact Information</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="bg-blue-600 p-3 rounded-lg mr-4">
-                                <i class="fas fa-envelope text-white"></i>
+            <div class="grid lg:grid-cols-5 gap-8 items-start">
+                <div class="lg:col-span-2 space-y-6" id="contact">
+                    <div class="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+                        <h3 class="text-2xl font-semibold mb-6" data-i18n="contact.infoTitle">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-blue-600 p-3 rounded-lg mr-4"><i class="fas fa-envelope text-white"></i></div>
+                                <div>
+                                    <p class="text-gray-400 text-sm" data-i18n="contact.emailLabel">Email</p>
+                                    <a class="text-white hover:text-blue-300" href="mailto:gardensupply@zohomail.cn">gardensupply@zohomail.cn</a>
+                                </div>
                             </div>
-                            <div>
-                                <p class="text-gray-400 text-sm" data-i18n="contact.emailLabel">Email</p>
-                                <p class="text-white">gardensupply@zohomail.cn</p>
+                            <div class="flex items-start">
+                                <div class="bg-green-600 p-3 rounded-lg mr-4"><i class="fab fa-whatsapp text-white"></i></div>
+                                <div>
+                                    <p class="text-gray-400 text-sm" data-i18n="contact.whatsappLabel">WhatsApp</p>
+                                    <a class="text-white hover:text-green-300" href="https://wa.me/85268744115" target="_blank" rel="noopener">+852 6874 4115</a>
+                                    <p class="text-gray-400 text-sm mt-1" data-i18n="contact.whatsappDesc">Quick response within 24 hours</p>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="bg-blue-600 p-3 rounded-lg mr-4">
-                                <i class="fab fa-whatsapp text-white"></i>
+                            <div class="flex items-start">
+                                <div class="bg-blue-600 p-3 rounded-lg mr-4"><i class="fas fa-map-marker-alt text-white"></i></div>
+                                <div>
+                                    <p class="text-gray-400 text-sm" data-i18n="contact.locationLabel">Factory Location</p>
+                                    <p class="text-white">Guangdong, China</p>
+                                </div>
                             </div>
-                            <div>
-                                <p class="text-gray-400 text-sm" data-i18n="contact.whatsappLabel">WhatsApp</p>
-                                <p class="text-white">+852 6874 4115</p>
-                                <p class="text-gray-400 text-sm mt-1" data-i18n="contact.whatsappDesc">Quick response within 24 hours</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="bg-blue-600 p-3 rounded-lg mr-4">
-                                <i class="fas fa-map-marker-alt text-white"></i>
-                            </div>
-                            <div>
-                                <p class="text-gray-400 text-sm" data-i18n="contact.locationLabel">Factory Location</p>
-                                <p class="text-white">Guangdong, China</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="bg-blue-600 p-3 rounded-lg mr-4">
-                                <i class="fas fa-truck text-white"></i>
-                            </div>
-                            <div>
-                                <p class="text-gray-400 text-sm" data-i18n="contact.shippingLabel">Shipping</p>
-                                <p class="text-white" data-i18n="contact.shippingValue">FOB/CIF terms available</p>
-                                <p class="text-gray-400 text-sm mt-1" data-i18n="contact.shippingDesc">Worldwide delivery</p>
+                            <div class="flex items-start">
+                                <div class="bg-blue-600 p-3 rounded-lg mr-4"><i class="fas fa-truck text-white"></i></div>
+                                <div>
+                                    <p class="text-gray-400 text-sm" data-i18n="contact.shippingLabel">Shipping</p>
+                                    <p class="text-white" data-i18n="contact.shippingValue">FOB/CIF terms available</p>
+                                    <p class="text-gray-400 text-sm mt-1" data-i18n="contact.shippingDesc">Worldwide delivery</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="mt-8 p-6 bg-blue-800/50 rounded-xl border border-blue-700">
-                        <h4 class="font-semibold mb-2"><i class="fas fa-info-circle mr-2"></i><span data-i18n="contact.hoursTitle">Business Hours</span></h4>
-                        <p class="text-gray-300 text-sm" data-i18n="contact.hours1">Monday - Friday: 9:00 - 18:00 (CST)</p>
-                        <p class="text-gray-300 text-sm" data-i18n="contact.hours2">Weekend: Emergency contacts available via WhatsApp</p>
+                    <div class="bg-blue-800/50 rounded-2xl p-6 border border-blue-700">
+                        <h4 class="font-semibold mb-3"><i class="fas fa-credit-card mr-2"></i><span data-i18n="payment.title">Payment Methods</span></h4>
+                        <ul class="space-y-2 text-gray-200 text-sm">
+                            <li data-i18n="payment.p1">• PayPal for sample orders</li>
+                            <li data-i18n="payment.p2">• T/T bank transfer for bulk orders</li>
+                            <li data-i18n="payment.p3">• Alibaba Trade Assurance if needed</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="bg-gray-800 rounded-xl p-8">
-                    <h3 class="text-2xl font-semibold mb-6" data-i18n="contact.formTitle">Send Us a Message</h3>
-                    <form id="contact-form" class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.name">Your Name</label>
-                            <input type="text" placeholder data-i18n-placeholder="contact.form.namePlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <div class="lg:col-span-3 bg-gray-800 rounded-2xl p-6 md:p-8 border border-gray-700 shadow-2xl">
+                    <h3 class="text-2xl font-semibold mb-6" data-i18n="contact.formTitle">Send Your Inquiry</h3>
+                    <form id="contact-form" class="space-y-5">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.name">Your Name</label>
+                                <input name="name" type="text" required placeholder data-i18n-placeholder="contact.form.namePlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.company">Company Name</label>
+                                <input name="company" type="text" placeholder data-i18n-placeholder="contact.form.companyPlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.email">Email Address</label>
+                                <input name="email" type="email" required placeholder data-i18n-placeholder="contact.form.emailPlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.whatsapp">WhatsApp / Phone</label>
+                                <input name="whatsapp" type="text" placeholder data-i18n-placeholder="contact.form.whatsappPlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.country">Country / Destination Port</label>
+                                <input name="country" type="text" placeholder data-i18n-placeholder="contact.form.countryPlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.product">Product Interest</label>
+                                <select name="product" id="product-interest" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="" data-i18n="contact.form.selectPlaceholder">Select a product category</option>
+                                    <option>Classic Round Pots</option>
+                                    <option>Large Decorative Pots</option>
+                                    <option>Hanging Basket Pots</option>
+                                    <option>Square Nursery Pots</option>
+                                    <option>Nursery Seedling Pots</option>
+                                    <option>Custom Molds & Sizes</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.quantity">Quantity</label>
+                                <input name="quantity" type="text" placeholder data-i18n-placeholder="contact.form.quantityPlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.color">Color Requirement</label>
+                                <input name="color" type="text" placeholder data-i18n-placeholder="contact.form.colorPlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.shipping">Shipping Method</label>
+                                <select name="shipping" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="Not sure" data-i18n="contact.form.shippingNotSure">Not sure</option>
+                                    <option value="Sea freight">Sea freight</option>
+                                    <option value="Air freight">Air freight</option>
+                                    <option value="Express sample shipping">Express sample shipping</option>
+                                </select>
+                            </div>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.company">Company Name</label>
-                            <input type="text" placeholder data-i18n-placeholder="contact.form.companyPlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.email">Email Address</label>
-                            <input type="email" placeholder data-i18n-placeholder="contact.form.emailPlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.product">Product Interest</label>
-                            <select class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <option data-i18n="contact.form.selectPlaceholder">Select a product category</option>
-                                <option data-i18n="products.p1.name">Nursery Seedling Pots</option>
-                                <option data-i18n="products.p2.name">Large Decorative Pots</option>
-                                <option data-i18n="products.p3.name">Hanging Baskets</option>
-                                <option data-i18n="products.p4.name">Square Nursery Pots</option>
-                                <option data-i18n="products.p5.name">Classic Round Pots</option>
-                                <option data-i18n="products.p6.name">Custom Molds</option>
-                            </select>
+                            <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.logo">Logo Customization</label>
+                            <div class="flex gap-4 text-gray-200">
+                                <label class="inline-flex items-center gap-2"><input type="radio" name="logo" value="Yes" class="accent-blue-500"> <span data-i18n="common.yes">Yes</span></label>
+                                <label class="inline-flex items-center gap-2"><input type="radio" name="logo" value="No" class="accent-blue-500"> <span data-i18n="common.no">No</span></label>
+                                <label class="inline-flex items-center gap-2"><input type="radio" name="logo" value="Not sure" class="accent-blue-500" checked> <span data-i18n="common.notSure">Not sure</span></label>
+                            </div>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="contact.form.message">Message</label>
-                            <textarea rows="4" placeholder data-i18n-placeholder="contact.form.messagePlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            <textarea name="message" rows="4" placeholder data-i18n-placeholder="contact.form.messagePlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors" data-i18n="contact.form.submit">
-                            <i class="fas fa-paper-plane mr-2"></i>
-                            Send Message
-                        </button>
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors" data-i18n="contact.form.submit">
+                                <i class="fas fa-envelope mr-2"></i>
+                                Send by Email
+                            </button>
+                            <button type="button" onclick="sendInquiryByWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors" data-i18n="contact.form.whatsappSubmit">
+                                <i class="fab fa-whatsapp mr-2"></i>
+                                Send by WhatsApp
+                            </button>
+                        </div>
+                        <p class="text-xs text-gray-400" data-i18n="contact.form.note">The form opens your email or WhatsApp with the inquiry details. We confirm price and shipping before payment.</p>
                     </form>
                 </div>
             </div>
@@ -969,6 +1079,47 @@
                 "footer.quote": "Request Quote",
                 "footer.whatsapp": "WhatsApp for quick quote",
                 "footer.copyright": "Premium plastic garden pots manufacturer."
+                ,"nav.orderProcess": "Order Process"
+                ,"nav.inquiry": "Inquiry Form"
+                ,"hero.whatsapp": "WhatsApp Now"
+                ,"products.requestQuote": "Request Quote"
+                ,"products.orderSample": "Order Sample"
+                ,"process.kicker": "B2B Ordering Made Clear"
+                ,"process.title": "Inquiry, Quotation, Payment, Shipment"
+                ,"process.subtitle": "Submit your product requirements first. We confirm MOQ, packing, shipping cost and payment method before production."
+                ,"process.s1.title": "Submit Inquiry"
+                ,"process.s1.desc": "Tell us the model, quantity, color, logo needs and destination country."
+                ,"process.s2.title": "Receive Quotation"
+                ,"process.s2.desc": "We confirm unit price, sample fee, lead time, packing and FOB/CIF shipping terms."
+                ,"process.s3.title": "Confirm Payment"
+                ,"process.s3.desc": "Sample orders can use PayPal. Bulk orders usually use T/T deposit and balance."
+                ,"process.s4.title": "Production & Shipment"
+                ,"process.s4.desc": "We arrange production, quality check, packing and export shipping documents."
+                ,"process.cta": "Start Your Order Inquiry"
+                ,"inquiry.kicker": "Factory Direct Inquiry"
+                ,"inquiry.title": "Inquiry & Sample Order Form"
+                ,"inquiry.subtitle": "Send us your requirements. We will reply with quotation, sample cost and shipping suggestion within 24 hours."
+                ,"payment.title": "Payment Methods"
+                ,"payment.p1": "• PayPal for sample orders"
+                ,"payment.p2": "• T/T bank transfer for bulk orders"
+                ,"payment.p3": "• Alibaba Trade Assurance if needed"
+                ,"contact.form.whatsapp": "WhatsApp / Phone"
+                ,"contact.form.whatsappPlaceholder": "+1 234 567 890"
+                ,"contact.form.country": "Country / Destination Port"
+                ,"contact.form.countryPlaceholder": "United States / Los Angeles"
+                ,"contact.form.quantity": "Quantity"
+                ,"contact.form.quantityPlaceholder": "e.g. 5,000 pcs"
+                ,"contact.form.color": "Color Requirement"
+                ,"contact.form.colorPlaceholder": "Black, terracotta, custom color..."
+                ,"contact.form.shipping": "Shipping Method"
+                ,"contact.form.shippingNotSure": "Not sure"
+                ,"contact.form.logo": "Logo Customization"
+                ,"contact.form.whatsappSubmit": "Send by WhatsApp"
+                ,"contact.form.note": "The form opens your email or WhatsApp with the inquiry details. We confirm price and shipping before payment."
+                ,"common.yes": "Yes"
+                ,"common.no": "No"
+                ,"common.notSure": "Not sure"
+
             },
             es: {
                 pageTitle: "Macetas de Plástico Premium - PlanterPro | Fabricante Directo",
@@ -1081,6 +1232,47 @@
                 "footer.quote": "Solicitar Cotización",
                 "footer.whatsapp": "WhatsApp para cotización rápida",
                 "footer.copyright": "Fabricante premium de macetas de plástico."
+                ,"nav.orderProcess": "Proceso de pedido"
+                ,"nav.inquiry": "Formulario"
+                ,"hero.whatsapp": "WhatsApp ahora"
+                ,"products.requestQuote": "Pedir cotización"
+                ,"products.orderSample": "Pedir muestra"
+                ,"process.kicker": "Pedido B2B claro"
+                ,"process.title": "Consulta, cotización, pago y envío"
+                ,"process.subtitle": "Envíe primero sus requisitos. Confirmamos MOQ, empaque, envío y método de pago antes de la producción."
+                ,"process.s1.title": "Enviar consulta"
+                ,"process.s1.desc": "Indique modelo, cantidad, color, logo y país de destino."
+                ,"process.s2.title": "Recibir cotización"
+                ,"process.s2.desc": "Confirmamos precio unitario, muestra, plazo, empaque y términos FOB/CIF."
+                ,"process.s3.title": "Confirmar pago"
+                ,"process.s3.desc": "Las muestras pueden pagarse por PayPal. Pedidos grandes normalmente por T/T."
+                ,"process.s4.title": "Producción y envío"
+                ,"process.s4.desc": "Organizamos producción, control de calidad, empaque y documentos de exportación."
+                ,"process.cta": "Iniciar consulta"
+                ,"inquiry.kicker": "Consulta directa de fábrica"
+                ,"inquiry.title": "Formulario de consulta y muestra"
+                ,"inquiry.subtitle": "Envíe sus requisitos. Responderemos con cotización, costo de muestra y envío en 24 horas."
+                ,"payment.title": "Métodos de pago"
+                ,"payment.p1": "• PayPal para muestras"
+                ,"payment.p2": "• Transferencia T/T para pedidos grandes"
+                ,"payment.p3": "• Alibaba Trade Assurance si es necesario"
+                ,"contact.form.whatsapp": "WhatsApp / Teléfono"
+                ,"contact.form.whatsappPlaceholder": "+1 234 567 890"
+                ,"contact.form.country": "País / Puerto destino"
+                ,"contact.form.countryPlaceholder": "Estados Unidos / Los Ángeles"
+                ,"contact.form.quantity": "Cantidad"
+                ,"contact.form.quantityPlaceholder": "ej. 5,000 piezas"
+                ,"contact.form.color": "Color requerido"
+                ,"contact.form.colorPlaceholder": "Negro, terracota, color personalizado..."
+                ,"contact.form.shipping": "Método de envío"
+                ,"contact.form.shippingNotSure": "No estoy seguro"
+                ,"contact.form.logo": "Personalización de logo"
+                ,"contact.form.whatsappSubmit": "Enviar por WhatsApp"
+                ,"contact.form.note": "El formulario abre su correo o WhatsApp con los detalles. Confirmamos precio y envío antes del pago."
+                ,"common.yes": "Sí"
+                ,"common.no": "No"
+                ,"common.notSure": "No estoy seguro"
+
             },
             fr: {
                 pageTitle: "Pot en Plastique Premium - PlanterPro | Fabricant Direct",
@@ -1193,6 +1385,47 @@
                 "footer.quote": "Demander un Devis",
                 "footer.whatsapp": "WhatsApp pour devis rapide",
                 "footer.copyright": "Fabricant premium de pots de jardin en plastique."
+                ,"nav.orderProcess": "Processus"
+                ,"nav.inquiry": "Formulaire"
+                ,"hero.whatsapp": "WhatsApp"
+                ,"products.requestQuote": "Demander devis"
+                ,"products.orderSample": "Commander échantillon"
+                ,"process.kicker": "Commande B2B claire"
+                ,"process.title": "Demande, devis, paiement, expédition"
+                ,"process.subtitle": "Envoyez d'abord vos exigences. Nous confirmons MOQ, emballage, transport et paiement avant production."
+                ,"process.s1.title": "Envoyer demande"
+                ,"process.s1.desc": "Indiquez modèle, quantité, couleur, logo et pays de destination."
+                ,"process.s2.title": "Recevoir devis"
+                ,"process.s2.desc": "Nous confirmons prix, frais d'échantillon, délai, emballage et conditions FOB/CIF."
+                ,"process.s3.title": "Confirmer paiement"
+                ,"process.s3.desc": "Les échantillons peuvent utiliser PayPal. Les commandes en gros utilisent généralement T/T."
+                ,"process.s4.title": "Production & expédition"
+                ,"process.s4.desc": "Nous organisons production, contrôle qualité, emballage et documents export."
+                ,"process.cta": "Commencer la demande"
+                ,"inquiry.kicker": "Demande directe usine"
+                ,"inquiry.title": "Formulaire demande & échantillon"
+                ,"inquiry.subtitle": "Envoyez vos exigences. Nous répondrons avec devis, coût d'échantillon et transport sous 24h."
+                ,"payment.title": "Méthodes de paiement"
+                ,"payment.p1": "• PayPal pour échantillons"
+                ,"payment.p2": "• Virement T/T pour gros volumes"
+                ,"payment.p3": "• Alibaba Trade Assurance si besoin"
+                ,"contact.form.whatsapp": "WhatsApp / Téléphone"
+                ,"contact.form.whatsappPlaceholder": "+1 234 567 890"
+                ,"contact.form.country": "Pays / Port destination"
+                ,"contact.form.countryPlaceholder": "France / Le Havre"
+                ,"contact.form.quantity": "Quantité"
+                ,"contact.form.quantityPlaceholder": "ex. 5 000 pcs"
+                ,"contact.form.color": "Couleur souhaitée"
+                ,"contact.form.colorPlaceholder": "Noir, terre cuite, couleur personnalisée..."
+                ,"contact.form.shipping": "Mode de transport"
+                ,"contact.form.shippingNotSure": "Pas sûr"
+                ,"contact.form.logo": "Logo personnalisé"
+                ,"contact.form.whatsappSubmit": "Envoyer par WhatsApp"
+                ,"contact.form.note": "Le formulaire ouvre votre email ou WhatsApp avec les détails. Nous confirmons prix et transport avant paiement."
+                ,"common.yes": "Oui"
+                ,"common.no": "Non"
+                ,"common.notSure": "Pas sûr"
+
             },
             zh: {
                 pageTitle: "優質塑膠花盆 - PlanterPro | 直接製造商",
@@ -1304,6 +1537,47 @@
                 "footer.prices": "價格表",
                 "footer.quote": "索取報價",
                 "footer.copyright": "優質塑膠花盆製造商。"
+                ,"nav.orderProcess": "下單流程"
+                ,"nav.inquiry": "詢盤表單"
+                ,"hero.whatsapp": "WhatsApp 聯繫"
+                ,"products.requestQuote": "索取報價"
+                ,"products.orderSample": "樣品下單"
+                ,"process.kicker": "B2B 下單流程清晰"
+                ,"process.title": "詢盤、報價、付款、出貨"
+                ,"process.subtitle": "請先提交產品需求。我們會在生產前確認起訂量、包裝、運費和付款方式。"
+                ,"process.s1.title": "提交詢盤"
+                ,"process.s1.desc": "告訴我們型號、數量、顏色、Logo 需求和目的國。"
+                ,"process.s2.title": "收到報價"
+                ,"process.s2.desc": "我們確認單價、樣品費、交期、包裝和 FOB/CIF 條款。"
+                ,"process.s3.title": "確認付款"
+                ,"process.s3.desc": "樣品單可用 PayPal，大貨通常使用 T/T 訂金和尾款。"
+                ,"process.s4.title": "生產與出貨"
+                ,"process.s4.desc": "我們安排生產、質檢、包裝和出口單證。"
+                ,"process.cta": "開始提交訂單需求"
+                ,"inquiry.kicker": "工廠直供詢盤"
+                ,"inquiry.title": "詢盤與樣品下單表單"
+                ,"inquiry.subtitle": "請提交您的需求。我們會在 24 小時內回覆報價、樣品費和運輸建議。"
+                ,"payment.title": "付款方式"
+                ,"payment.p1": "• 樣品單可用 PayPal"
+                ,"payment.p2": "• 大貨訂單使用 T/T 銀行轉帳"
+                ,"payment.p3": "• 如有需要可使用阿里巴巴信保"
+                ,"contact.form.whatsapp": "WhatsApp / 電話"
+                ,"contact.form.whatsappPlaceholder": "+1 234 567 890"
+                ,"contact.form.country": "國家 / 目的港"
+                ,"contact.form.countryPlaceholder": "美國 / 洛杉磯"
+                ,"contact.form.quantity": "數量"
+                ,"contact.form.quantityPlaceholder": "例如 5,000 個"
+                ,"contact.form.color": "顏色需求"
+                ,"contact.form.colorPlaceholder": "黑色、陶土色、定制顏色..."
+                ,"contact.form.shipping": "運輸方式"
+                ,"contact.form.shippingNotSure": "不確定"
+                ,"contact.form.logo": "Logo 定制"
+                ,"contact.form.whatsappSubmit": "通過 WhatsApp 發送"
+                ,"contact.form.note": "表單會打開您的郵件或 WhatsApp 並帶入詢盤內容。我們會在付款前確認價格和運費。"
+                ,"common.yes": "是"
+                ,"common.no": "否"
+                ,"common.notSure": "不確定"
+
             }
         };
 
@@ -1400,18 +1674,76 @@
             });
         });
 
-        // Form submission
+        // Product card → inquiry form
+        function selectProductFromCard(el, orderType) {
+            var card = el.closest('.product-card');
+            var nameEl = card ? card.querySelector('h3') : null;
+            var productName = nameEl ? nameEl.textContent.trim() : '';
+            var sel = document.getElementById('product-interest');
+            if (sel && productName) {
+                for (var i = 0; i < sel.options.length; i++) {
+                    if (sel.options[i].textContent.trim() === productName) { sel.selectedIndex = i; break; }
+                }
+            }
+            if (orderType) {
+                var msgEl = document.querySelector('textarea[name="message"]');
+                if (msgEl && !msgEl.value) msgEl.value = orderType + ': ';
+            }
+        }
+
+        function getFormData() {
+            var f = document.getElementById('contact-form');
+            var fd = new FormData(f);
+            var d = {};
+            fd.forEach(function(v, k) { d[k] = v; });
+            return d;
+        }
+
+        function buildInquiryText(d) {
+            var lines = [];
+            lines.push('New Inquiry from PlanterPro Website');
+            lines.push('Name: ' + (d.name||''));
+            lines.push('Company: ' + (d.company||''));
+            lines.push('Email: ' + (d.email||''));
+            lines.push('WhatsApp/Phone: ' + (d.whatsapp||''));
+            lines.push('Country/Port: ' + (d.country||''));
+            lines.push('Product: ' + (d.product||''));
+            lines.push('Quantity: ' + (d.quantity||''));
+            lines.push('Color: ' + (d.color||''));
+            lines.push('Shipping: ' + (d.shipping||''));
+            lines.push('Logo: ' + (d.logo||''));
+            lines.push('Message: ' + (d.message||''));
+            return lines.join('\n');
+        }
+
+        // Form submission via email
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const messages = {
-                en: 'Thank you for your message! We will get back to you soon via email or WhatsApp.',
-                es: '¡Gracias por tu mensaje! Te responderemos pronto por correo electrónico o WhatsApp.',
-                fr: 'Merci pour votre message! Nous vous répondrons bientôt par email ou WhatsApp.',
-                zh: '感謝您的訊息！我們很快會通過電子郵件或 WhatsApp 回覆您。'
+            var d = getFormData();
+            var body = buildInquiryText(d);
+            var subject = encodeURIComponent('PlanterPro Inquiry: ' + (d.product||'General'));
+            var mailto = 'mailto:gardensupply@zohomail.cn?subject=' + subject + '&body=' + encodeURIComponent(body);
+            window.open(mailto, '_blank');
+            var messages = {
+                en: 'Your email client should open with the inquiry details. If not, please email gardensupply@zohomail.cn directly.',
+                es: 'Se abrirá su cliente de correo con los detalles. Si no, envíe un correo a gardensupply@zohomail.cn.',
+                fr: 'Votre client email devrait s\'ouvrir. Sinon, envoyez directement à gardensupply@zohomail.cn.',
+                zh: '您的邮件客户端应该会打开并填入询盘信息。如果没有，请直接发送邮件到 gardensupply@zohomail.cn。'
             };
-            alert(messages[currentLang]);
-            this.reset();
+            alert(messages[currentLang] || messages.en);
         });
+
+        // Send inquiry via WhatsApp
+        function sendInquiryByWhatsApp() {
+            var d = getFormData();
+            if (!d.name || !d.email) {
+                alert('Please fill in your name and email at minimum.');
+                return;
+            }
+            var body = buildInquiryText(d);
+            var url = 'https://wa.me/85268744115?text=' + encodeURIComponent(body);
+            window.open(url, '_blank');
+        }
 
         // Add fade-in animation on scroll
         const observerOptions = {
