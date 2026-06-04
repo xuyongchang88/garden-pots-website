@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="pageTitle">Premium Plastic Garden Pots - PlanterPro | Direct Manufacturer</title>
     <meta name="description" data-i18n="metaDescription" content="PlanterPro - Your trusted manufacturer of high quality plastic garden pots for nurseries, garden centers and wholesale distributors.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,14 +13,43 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,650;9..144,800&display=swap');
         
+        :root {
+            --leaf: #0f6b45;
+            --leaf-dark: #073525;
+            --mint: #e9f7ef;
+            --soil: #7a4f2a;
+            --amber: #f5b841;
+            --ink: #10211a;
+        }
+
         * {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        h1, h2, .display-font {
+            font-family: 'Fraunces', serif;
+            letter-spacing: -0.04em;
         }
         
         .hero-gradient {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            background:
+                radial-gradient(circle at 80% 20%, rgba(245, 184, 65, 0.28), transparent 32%),
+                radial-gradient(circle at 12% 18%, rgba(78, 190, 136, 0.25), transparent 28%),
+                linear-gradient(135deg, #06291f 0%, #0f5137 48%, #123f31 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+            background-size: 52px 52px;
+            mask-image: linear-gradient(to bottom, black, transparent 82%);
+            pointer-events: none;
         }
         
         .product-card:hover {
@@ -155,6 +185,123 @@
             font-weight: 600;
         }
         
+
+        .nav-glass {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(15, 107, 69, 0.12);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.55rem 0.85rem;
+            border-radius: 999px;
+            color: #d9fbe8;
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.18);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.16);
+        }
+
+        .hero-visual {
+            position: relative;
+            isolation: isolate;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            width: 72%;
+            height: 72%;
+            right: -7%;
+            top: -6%;
+            background: linear-gradient(135deg, rgba(245,184,65,.35), rgba(15,107,69,.05));
+            border-radius: 42% 58% 60% 40%;
+            z-index: -1;
+            filter: blur(2px);
+        }
+
+        .metric-card {
+            background: rgba(255,255,255,0.11);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 1.1rem;
+            padding: 1rem;
+            box-shadow: 0 18px 55px rgba(0,0,0,.14);
+        }
+
+        .trust-strip {
+            margin-top: -34px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .trust-card {
+            background: white;
+            border: 1px solid rgba(15, 107, 69, 0.10);
+            box-shadow: 0 18px 55px rgba(16,33,26,.08);
+            border-radius: 1.25rem;
+        }
+
+        .section-kicker {
+            color: var(--leaf);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .18em;
+            font-size: .78rem;
+        }
+
+        .product-card {
+            border: 1px solid rgba(15,107,69,.12) !important;
+            box-shadow: 0 18px 48px rgba(16,33,26,.08) !important;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 28px 70px rgba(16,33,26,.16) !important;
+        }
+
+        .product-spec-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: .65rem 0;
+            border-bottom: 1px solid #e5eee8;
+            font-size: .88rem;
+        }
+
+        .product-spec-row span:first-child { color: #60736a; }
+        .product-spec-row span:last-child { color: var(--ink); font-weight: 700; text-align: right; }
+
+        .buyer-card, .capability-card {
+            border: 1px solid rgba(15,107,69,.12);
+            background: linear-gradient(180deg, #ffffff, #fbfffd);
+            box-shadow: 0 18px 48px rgba(16,33,26,.07);
+        }
+
+        .floating-quote {
+            background: linear-gradient(135deg, #f6fff9, #ffffff);
+            border-left: 5px solid var(--leaf);
+        }
+
+        .sticky-mobile-cta {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-mobile-cta {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 60;
+                box-shadow: 0 -8px 30px rgba(0,0,0,.18);
+            }
+            body { padding-bottom: 58px; }
+        }
+
         @media (max-width: 768px) {
             .section-padding {
                 padding: 50px 0;
@@ -164,7 +311,7 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
+    <nav class="nav-glass fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
@@ -183,6 +330,9 @@
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">
+                    <a href="#inquiry" class="hidden lg:inline-flex items-center gap-2 bg-green-700 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-green-800 transition-colors">
+                        <i class="fas fa-paper-plane"></i> Get Factory Quote
+                    </a>
                     <!-- Language Switcher - Dropdown -->
                     <div class="relative" id="language-dropdown">
                         <button id="language-btn" class="flex items-center px-3 py-1 text-sm border border-gray-300 rounded-md hover:border-blue-500 transition-colors">
@@ -219,51 +369,77 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-gradient text-white pt-32 pb-20 mt-0">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                        <span data-i18n="hero.title1">Premium Quality</span><br>
-                        <span class="text-yellow-300" data-i18n="hero.title2">Plastic Garden Pots</span>
+    <section id="home" class="hero-gradient text-white pt-32 pb-24 mt-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 fade-in">
+                    <div class="hero-badge mb-6">
+                        <i class="fas fa-leaf text-yellow-300"></i>
+                        <span>Factory-direct horticulture containers for global buyers</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-[0.98]">
+                        Wholesale Plastic Pots,
+                        <span class="text-yellow-300">Built for Growers.</span>
                     </h1>
-                    <p class="text-xl mb-8 text-blue-100 leading-relaxed" data-i18n="hero.subtitle">
-                        Your trusted manufacturer of durable, eco-friendly plastic garden pots for nurseries, garden centers, and wholesale distributors.
+                    <p class="text-xl md:text-2xl mb-8 text-green-50 leading-relaxed max-w-3xl">
+                        Durable PP nursery pots, decorative planters, hanging baskets and custom molded containers — manufactured in Guangdong for importers, nurseries, garden centers and distributors.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#products" class="bg-white text-blue-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block text-center" data-i18n="hero.viewProducts">
-                            <i class="fas fa-shopping-basket mr-2"></i>
-                            View Products
+                        <a href="#inquiry" class="bg-yellow-300 text-green-950 px-8 py-4 rounded-full font-extrabold hover:bg-yellow-200 transition-colors inline-flex justify-center items-center gap-2 shadow-xl shadow-black/10">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            Request Factory Quote
                         </a>
-                        <a href="#inquiry" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition-colors inline-block text-center" data-i18n="hero.getQuote">
-                            <i class="fas fa-file-signature mr-2"></i>
-                            Get Quote
+                        <a href="#products" class="border border-white/40 bg-white/10 text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-green-900 transition-colors inline-flex justify-center items-center gap-2">
+                            <i class="fas fa-seedling"></i>
+                            View Product Range
                         </a>
-                        <a href="https://wa.me/85268744115?text=Hello%20PlanterPro%2C%20I%20want%20to%20request%20a%20quote%20for%20plastic%20garden%20pots." target="_blank" rel="noopener" class="bg-green-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-600 transition-colors inline-block text-center" data-i18n="hero.whatsapp">
-                            <i class="fab fa-whatsapp mr-2"></i>
+                        <a href="https://wa.me/85268744115?text=Hello%20PlanterPro%2C%20I%20want%20to%20request%20a%20quote%20for%20plastic%20garden%20pots." target="_blank" rel="noopener" class="bg-green-500 text-white px-8 py-4 rounded-full font-bold hover:bg-green-400 transition-colors inline-flex justify-center items-center gap-2">
+                            <i class="fab fa-whatsapp"></i>
                             WhatsApp Now
                         </a>
                     </div>
-                    <div class="mt-8 flex items-center gap-6">
-                        <div>
-                            <p class="text-3xl font-bold">10+</p>
-                            <p class="text-blue-100 text-sm" data-i18n="hero.exp">Years Experience</p>
+                    <div class="mt-10 grid grid-cols-3 gap-3 max-w-2xl">
+                        <div class="metric-card">
+                            <p class="text-3xl font-extrabold">10+</p>
+                            <p class="text-green-100 text-sm">Years Manufacturing</p>
                         </div>
-                        <div>
-                            <p class="text-3xl font-bold">5000+</p>
-                            <p class="text-blue-100 text-sm" data-i18n="hero.clients">Happy Clients</p>
+                        <div class="metric-card">
+                            <p class="text-3xl font-extrabold">50+</p>
+                            <p class="text-green-100 text-sm">Export Markets</p>
                         </div>
-                        <div>
-                            <p class="text-3xl font-bold">50+</p>
-                            <p class="text-blue-100 text-sm" data-i18n="hero.countries">Countries Exported</p>
+                        <div class="metric-card">
+                            <p class="text-3xl font-extrabold">OEM</p>
+                            <p class="text-green-100 text-sm">Colors / Logo / Mold</p>
                         </div>
                     </div>
                 </div>
-                <div class="fade-in">
-                    <div class="bg-white/10 backdrop-blur rounded-2xl p-4">
-                        <img src="images/hero.jpg" alt="Plastic Garden Pots" class="rounded-xl shadow-2xl w-full" loading="eager" fetchpriority="high" decoding="async" width="1400" height="692">
+                <div class="lg:col-span-5 fade-in hero-visual">
+                    <div class="bg-white/10 backdrop-blur rounded-[2rem] p-4 border border-white/15 shadow-2xl">
+                        <img src="images/hero.jpg" alt="Plastic garden pots manufactured for wholesale buyers" class="rounded-[1.5rem] shadow-2xl w-full" loading="eager" fetchpriority="high" decoding="async" width="1400" height="692">
+                        <div class="grid grid-cols-2 gap-3 mt-4">
+                            <div class="bg-white text-green-950 rounded-2xl p-4">
+                                <p class="text-xs uppercase tracking-widest text-green-700 font-bold">Material</p>
+                                <p class="font-extrabold">Recyclable PP</p>
+                            </div>
+                            <div class="bg-white text-green-950 rounded-2xl p-4">
+                                <p class="text-xs uppercase tracking-widest text-green-700 font-bold">Use</p>
+                                <p class="font-extrabold">Nursery · Retail · Garden</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <section class="trust-strip px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto trust-card p-5 md:p-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div><p class="font-extrabold text-green-800">Direct Factory</p><p class="text-sm text-gray-500">No trading markup</p></div>
+                <div><p class="font-extrabold text-green-800">Bulk Supply</p><p class="text-sm text-gray-500">Stable repeat orders</p></div>
+                <div><p class="font-extrabold text-green-800">Custom Options</p><p class="text-sm text-gray-500">Color, logo, packing</p></div>
+                <div><p class="font-extrabold text-green-800">Export Support</p><p class="text-sm text-gray-500">FOB / CIF documents</p></div>
             </div>
         </div>
     </section>
@@ -272,8 +448,9 @@
     <section id="products" class="section-padding bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-i18n="products.title">Our Product Range</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="products.subtitle">High-quality plastic pots for every gardening need. Available in multiple sizes, colors, and specifications.</p>
+                <p class="section-kicker mb-3">Product Portfolio</p>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4" data-i18n="products.title">Wholesale Pots for Every Growing Channel</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="products.subtitle">Select proven container lines for nurseries, retail garden centers, landscaping projects and private-label programs.</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -315,6 +492,10 @@
                                 <span data-i18n="products.p5.f3">Cost-effective pricing</span>
                             </li>
                         </ul>
+                        <div class="bg-green-50 rounded-xl px-4 py-3 mb-4">
+                            <div class="product-spec-row"><span>Diameter range</span><span>8–35 cm</span></div>
+                            <div class="product-spec-row border-0"><span>Best for</span><span>Nursery / retail</span></div>
+                        </div>
                         <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4 space-y-3">
                             <p class="text-sm text-gray-500" data-i18n="products.moq">MOQ: 50 pieces</p>
                             <div class="grid grid-cols-2 gap-2">
@@ -359,6 +540,10 @@
                                 <span data-i18n="products.p2.f3">UV stabilized material</span>
                             </li>
                         </ul>
+                        <div class="bg-green-50 rounded-xl px-4 py-3 mb-4">
+                            <div class="product-spec-row"><span>Diameter range</span><span>20–40 cm</span></div>
+                            <div class="product-spec-row border-0"><span>Best for</span><span>Decorative plants</span></div>
+                        </div>
                         <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4 space-y-3">
                             <p class="text-sm text-gray-500" data-i18n="products.moq">MOQ: 50 pieces</p>
                             <div class="grid grid-cols-2 gap-2">
@@ -402,6 +587,10 @@
                                 <span data-i18n="products.p3.f3">Various diameter options</span>
                             </li>
                         </ul>
+                        <div class="bg-green-50 rounded-xl px-4 py-3 mb-4">
+                            <div class="product-spec-row"><span>Options</span><span>Hook / chain</span></div>
+                            <div class="product-spec-row border-0"><span>Best for</span><span>Balcony & patio</span></div>
+                        </div>
                         <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4 space-y-3">
                             <p class="text-sm text-gray-500" data-i18n="products.moq">MOQ: 50 pieces</p>
                             <div class="grid grid-cols-2 gap-2">
@@ -445,6 +634,10 @@
                                 <span data-i18n="products.p4.f3">Easy labeling</span>
                             </li>
                         </ul>
+                        <div class="bg-green-50 rounded-xl px-4 py-3 mb-4">
+                            <div class="product-spec-row"><span>Shape</span><span>Square stackable</span></div>
+                            <div class="product-spec-row border-0"><span>Best for</span><span>Transport density</span></div>
+                        </div>
                         <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4 space-y-3">
                             <p class="text-sm text-gray-500" data-i18n="products.moq">MOQ: 50 pieces</p>
                             <div class="grid grid-cols-2 gap-2">
@@ -483,6 +676,10 @@
                                 <span data-i18n="products.p1.f3">Food-grade PP material</span>
                             </li>
                         </ul>
+                        <div class="bg-green-50 rounded-xl px-4 py-3 mb-4">
+                            <div class="product-spec-row"><span>Size range</span><span>5–15 cm</span></div>
+                            <div class="product-spec-row border-0"><span>Best for</span><span>Seedlings</span></div>
+                        </div>
                         <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4 space-y-3">
                             <p class="text-sm text-gray-500" data-i18n="products.moq">MOQ: 50 pieces</p>
                             <div class="grid grid-cols-2 gap-2">
@@ -521,6 +718,10 @@
                                 <span data-i18n="products.p6.f3">OEM/ODM welcome</span>
                             </li>
                         </ul>
+                        <div class="bg-green-50 rounded-xl px-4 py-3 mb-4">
+                            <div class="product-spec-row"><span>Service</span><span>OEM / ODM</span></div>
+                            <div class="product-spec-row border-0"><span>Best for</span><span>Private label</span></div>
+                        </div>
                         <div class="bg-gray-50 -mx-6 -mb-6 mt-6 px-6 py-4 space-y-3">
                             <p class="text-sm text-gray-500" data-i18n="products.moqNeg">MOQ: Negotiable</p>
                             <div class="grid grid-cols-2 gap-2">
@@ -534,11 +735,72 @@
         </div>
     </section>
 
+
+    <!-- Buyer Segments -->
+    <section id="buyers" class="section-padding bg-[#f6fbf7]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8 items-end mb-10">
+                <div class="lg:col-span-2">
+                    <p class="section-kicker mb-3">Built Around Real B2B Use</p>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">One supplier for nursery production, retail display and custom programs.</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl">Good horticulture container websites make buying decisions easy: clear product families, practical specifications, customization choices and a fast quotation path. We now show exactly that.</p>
+                </div>
+                <div class="floating-quote rounded-2xl p-6 shadow-lg">
+                    <p class="text-gray-700 font-semibold">Need a container for a target plant size, shelf display, or import budget?</p>
+                    <a href="#inquiry" class="inline-flex mt-4 items-center gap-2 text-green-800 font-extrabold">Send requirements <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="buyer-card rounded-2xl p-7">
+                    <i class="fas fa-warehouse text-3xl text-green-700 mb-5"></i>
+                    <h3 class="text-xl font-extrabold mb-3">Nurseries & Growers</h3>
+                    <p class="text-gray-600 mb-5">Lightweight, stackable pots and trays for propagation, transplanting and daily greenhouse handling.</p>
+                    <ul class="text-sm text-gray-700 space-y-2"><li>• Drainage options</li><li>• Efficient stacking</li><li>• Bulk carton packing</li></ul>
+                </div>
+                <div class="buyer-card rounded-2xl p-7">
+                    <i class="fas fa-store text-3xl text-green-700 mb-5"></i>
+                    <h3 class="text-xl font-extrabold mb-3">Garden Centers & Retailers</h3>
+                    <p class="text-gray-600 mb-5">Decorative planters and hanging baskets for retail-ready plant displays and seasonal sales.</p>
+                    <ul class="text-sm text-gray-700 space-y-2"><li>• Popular colors</li><li>• Label-friendly surface</li><li>• Sample order available</li></ul>
+                </div>
+                <div class="buyer-card rounded-2xl p-7">
+                    <i class="fas fa-tags text-3xl text-green-700 mb-5"></i>
+                    <h3 class="text-xl font-extrabold mb-3">Importers & Private Label</h3>
+                    <p class="text-gray-600 mb-5">Custom color, logo printing, packaging and mold development for long-term product programs.</p>
+                    <ul class="text-sm text-gray-700 space-y-2"><li>• OEM/ODM support</li><li>• FOB/CIF quotation</li><li>• Export documents</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capability Snapshot -->
+    <section class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <p class="section-kicker mb-3">Manufacturing Snapshot</p>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-5">Clear capability signals buyers expect before requesting a quote.</h2>
+                    <p class="text-lg text-gray-600 mb-8">We strengthened the website with information importers usually check first: material, size range, packing, customization and export terms.</p>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="capability-card rounded-2xl p-5"><p class="text-sm text-gray-500">Material</p><p class="font-extrabold text-xl text-gray-900">PP / recycled options</p></div>
+                        <div class="capability-card rounded-2xl p-5"><p class="text-sm text-gray-500">Process</p><p class="font-extrabold text-xl text-gray-900">Injection molding</p></div>
+                        <div class="capability-card rounded-2xl p-5"><p class="text-sm text-gray-500">Customization</p><p class="font-extrabold text-xl text-gray-900">Color · logo · mold</p></div>
+                        <div class="capability-card rounded-2xl p-5"><p class="text-sm text-gray-500">Trade Terms</p><p class="font-extrabold text-xl text-gray-900">FOB / CIF / sample</p></div>
+                    </div>
+                </div>
+                <div class="rounded-[2rem] overflow-hidden shadow-2xl border border-green-100">
+                    <img src="images/custom.jpg" alt="Custom plastic pot manufacturing and color options" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Why Choose Us -->
-    <section id="features" class="section-padding bg-gray-50">
+    <section id="features" class="section-padding bg-[#f8faf7]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" data-i18n="features.title">Why Choose Our Plastic Pots</h2>
+                <p class="section-kicker mb-3">Why Buyers Choose Us</p>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4" data-i18n="features.title">Quality, export readiness and practical pricing</h2>
                 <p class="text-xl text-gray-600" data-i18n="features.subtitle">We combine quality manufacturing with competitive pricing for wholesale buyers</p>
             </div>
 
@@ -892,6 +1154,12 @@
             </div>
         </div>
     </footer>
+
+
+    <div class="sticky-mobile-cta">
+        <a href="#inquiry" class="bg-yellow-300 text-green-950 font-extrabold text-center py-4">Get Quote</a>
+        <a href="https://wa.me/85268744115" target="_blank" rel="noopener" class="bg-green-600 text-white font-extrabold text-center py-4">WhatsApp</a>
+    </div>
 
     <!-- Lightbox for full-size image viewing -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
