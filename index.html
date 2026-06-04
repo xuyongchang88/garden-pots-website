@@ -331,7 +331,7 @@
                 </div>
                 <div class="flex items-center space-x-4">
                     <a href="#inquiry" class="hidden lg:inline-flex items-center gap-2 bg-green-700 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-green-800 transition-colors">
-                        <i class="fas fa-paper-plane"></i> Get Factory Quote
+                        <i class="fas fa-paper-plane"></i> <span data-i18n="nav.getQuote">Get Factory Quote</span>
                     </a>
                     <!-- Language Switcher - Dropdown -->
                     <div class="relative" id="language-dropdown">
@@ -1853,6 +1853,177 @@
             }
         };
 
+
+        // Extra translations for the redesigned B2B sections and hard-coded UI text
+        const translationOverrides = {
+            en: {
+                "nav.getQuote": "Get Factory Quote",
+                "products.title": "Wholesale Pots for Every Growing Channel",
+                "products.subtitle": "Select proven container lines for nurseries, retail garden centers, landscaping projects and private-label programs.",
+                "features.title": "Quality, export readiness and practical pricing",
+                "features.subtitle": "We combine quality manufacturing with competitive pricing for wholesale buyers"
+            },
+            es: {
+                "nav.getQuote": "Cotización de fábrica",
+                "products.title": "Macetas al por mayor para cada canal de cultivo",
+                "products.subtitle": "Seleccione líneas probadas para viveros, centros de jardinería, paisajismo y programas de marca propia.",
+                "features.title": "Calidad, preparación para exportar y precios prácticos",
+                "features.subtitle": "Combinamos fabricación de calidad con precios competitivos para compradores mayoristas"
+            },
+            fr: {
+                "nav.getQuote": "Devis d'usine",
+                "products.title": "Pots en gros pour chaque canal de culture",
+                "products.subtitle": "Sélectionnez des gammes éprouvées pour pépinières, jardineries, aménagement paysager et marque privée.",
+                "features.title": "Qualité, exportation et prix pratiques",
+                "features.subtitle": "Nous combinons fabrication de qualité et prix compétitifs pour les acheteurs en gros"
+            },
+            zh: {
+                "nav.getQuote": "工厂报价",
+                "products.title": "适用于各类种植渠道的批发花盆",
+                "products.subtitle": "为苗圃、园艺中心、景观项目和自有品牌选择成熟可靠的花盆系列。",
+                "features.title": "品质、出口能力和务实价格",
+                "features.subtitle": "我们为批发买家提供稳定品质制造和有竞争力的价格"
+            }
+        };
+
+        Object.keys(translationOverrides).forEach(function(lang) {
+            translations[lang] = Object.assign(translations[lang] || {}, translationOverrides[lang]);
+        });
+
+        const staticTranslations = {
+            "Get Factory Quote": { es: "Cotización de fábrica", fr: "Devis d'usine", zh: "工厂报价" },
+            "Factory-direct horticulture containers for global buyers": { es: "Contenedores hortícolas directos de fábrica para compradores globales", fr: "Conteneurs horticoles directs d'usine pour acheteurs mondiaux", zh: "面向全球买家的工厂直供园艺容器" },
+            "Wholesale Plastic Pots, Built for Growers.": { es: "Macetas plásticas al por mayor, hechas para productores.", fr: "Pots plastiques en gros, conçus pour les producteurs.", zh: "批发塑料花盆，为种植客户而造。" },
+            "Durable PP nursery pots, decorative planters, hanging baskets and custom molded containers — manufactured in Guangdong for importers, nurseries, garden centers and distributors.": { es: "Macetas de PP para vivero, maceteros decorativos, cestas colgantes y contenedores a medida — fabricados en Guangdong para importadores, viveros, centros de jardinería y distribuidores.", fr: "Pots de pépinière en PP, jardinières décoratives, paniers suspendus et conteneurs sur mesure — fabriqués au Guangdong pour importateurs, pépinières, jardineries et distributeurs.", zh: "耐用 PP 育苗盆、装饰花盆、吊篮和定制模具花盆——广东工厂生产，面向进口商、苗圃、园艺中心和分销商。" },
+            "Request Factory Quote": { es: "Solicitar cotización de fábrica", fr: "Demander un devis d'usine", zh: "获取工厂报价" },
+            "View Product Range": { es: "Ver gama de productos", fr: "Voir la gamme de produits", zh: "查看产品系列" },
+            "Years Manufacturing": { es: "Años fabricando", fr: "Ans de fabrication", zh: "年制造经验" },
+            "Export Markets": { es: "Mercados de exportación", fr: "Marchés export", zh: "出口市场" },
+            "Colors / Logo / Mold": { es: "Colores / Logo / Molde", fr: "Couleurs / Logo / Moule", zh: "颜色 / Logo / 模具" },
+            "Material": { es: "Material", fr: "Matériau", zh: "材料" },
+            "Process": { es: "Proceso", fr: "Procédé", zh: "工艺" },
+            "Customization": { es: "Personalización", fr: "Personnalisation", zh: "定制" },
+            "Trade Terms": { es: "Términos comerciales", fr: "Conditions commerciales", zh: "贸易条款" },
+            "Recyclable PP": { es: "PP reciclable", fr: "PP recyclable", zh: "可回收 PP" },
+            "Use": { es: "Uso", fr: "Usage", zh: "用途" },
+            "Nursery · Retail · Garden": { es: "Vivero · Venta · Jardín", fr: "Pépinière · Vente · Jardin", zh: "苗圃 · 零售 · 园艺" },
+            "Direct Factory": { es: "Fábrica directa", fr: "Usine directe", zh: "源头工厂" },
+            "No trading markup": { es: "Sin margen de intermediario", fr: "Sans marge d'intermédiaire", zh: "无贸易商加价" },
+            "Bulk Supply": { es: "Suministro a granel", fr: "Fourniture en gros", zh: "批量供货" },
+            "Stable repeat orders": { es: "Pedidos repetidos estables", fr: "Commandes récurrentes stables", zh: "适合长期复购" },
+            "Custom Options": { es: "Opciones personalizadas", fr: "Options sur mesure", zh: "定制选项" },
+            "Color, logo, packing": { es: "Color, logo, embalaje", fr: "Couleur, logo, emballage", zh: "颜色、Logo、包装" },
+            "Export Support": { es: "Soporte de exportación", fr: "Support export", zh: "出口支持" },
+            "FOB / CIF documents": { es: "Documentos FOB/CIF", fr: "Documents FOB/CIF", zh: "FOB / CIF 单证" },
+            "Product Portfolio": { es: "Cartera de productos", fr: "Portefeuille produits", zh: "产品组合" },
+            "Wholesale Pots for Every Growing Channel": { es: "Macetas al por mayor para cada canal de cultivo", fr: "Pots en gros pour chaque canal de culture", zh: "适用于各类种植渠道的批发花盆" },
+            "Select proven container lines for nurseries, retail garden centers, landscaping projects and private-label programs.": { es: "Seleccione líneas probadas para viveros, centros de jardinería, paisajismo y programas de marca propia.", fr: "Sélectionnez des gammes éprouvées pour pépinières, jardineries, aménagement paysager et marque privée.", zh: "为苗圃、园艺中心、景观项目和自有品牌选择成熟可靠的花盆系列。" },
+            "Diameter range": { es: "Rango de diámetro", fr: "Diamètre", zh: "直径范围" },
+            "Size range": { es: "Rango de tamaño", fr: "Taille", zh: "尺寸范围" },
+            "Shape": { es: "Forma", fr: "Forme", zh: "形状" },
+            "Options": { es: "Opciones", fr: "Options", zh: "选项" },
+            "Service": { es: "Servicio", fr: "Service", zh: "服务" },
+            "Best for": { es: "Ideal para", fr: "Idéal pour", zh: "适用于" },
+            "Nursery / retail": { es: "Vivero / venta", fr: "Pépinière / vente", zh: "苗圃 / 零售" },
+            "Decorative plants": { es: "Plantas decorativas", fr: "Plantes décoratives", zh: "装饰植物" },
+            "Hook / chain": { es: "Gancho / cadena", fr: "Crochet / chaîne", zh: "挂钩 / 链条" },
+            "Balcony & patio": { es: "Balcón y patio", fr: "Balcon et terrasse", zh: "阳台和庭院" },
+            "Square stackable": { es: "Cuadrada apilable", fr: "Carré empilable", zh: "方形可堆叠" },
+            "Transport density": { es: "Densidad de transporte", fr: "Densité transport", zh: "运输装载率" },
+            "Seedlings": { es: "Semilleros", fr: "Semis", zh: "育苗" },
+            "Private label": { es: "Marca propia", fr: "Marque privée", zh: "自有品牌" },
+            "Built Around Real B2B Use": { es: "Construido para uso B2B real", fr: "Conçu pour usage B2B réel", zh: "围绕真实 B2B 采购场景" },
+            "One supplier for nursery production, retail display and custom programs.": { es: "Un proveedor para producción de vivero, exhibición minorista y programas personalizados.", fr: "Un fournisseur pour production en pépinière, vente au détail et programmes personnalisés.", zh: "一个供应商，覆盖苗圃生产、零售展示和定制项目。" },
+            "Good horticulture container websites make buying decisions easy: clear product families, practical specifications, customization choices and a fast quotation path. We now show exactly that.": { es: "Los buenos sitios de contenedores hortícolas facilitan la compra: familias claras, especificaciones prácticas, personalización y cotización rápida.", fr: "Les bons sites de conteneurs horticoles facilitent l'achat: gammes claires, spécifications pratiques, personnalisation et devis rapide.", zh: "优秀的园艺容器官网会让采购更简单：产品系列清晰、规格实用、定制选项明确、报价路径快速。" },
+            "Need a container for a target plant size, shelf display, or import budget?": { es: "¿Necesita un contenedor para tamaño de planta, exhibición o presupuesto de importación?", fr: "Besoin d'un conteneur pour une taille de plante, un présentoir ou un budget d'importation?", zh: "需要按植物尺寸、货架展示或进口预算匹配花盆吗？" },
+            "Send requirements": { es: "Enviar requisitos", fr: "Envoyer besoins", zh: "发送需求" },
+            "Send requirements →": { es: "Enviar requisitos →", fr: "Envoyer besoins →", zh: "发送需求 →" },
+            "Nurseries & Growers": { es: "Viveros y productores", fr: "Pépinières et producteurs", zh: "苗圃与种植商" },
+            "Lightweight, stackable pots and trays for propagation, transplanting and daily greenhouse handling.": { es: "Macetas y bandejas ligeras y apilables para propagación, trasplante y manejo diario en invernadero.", fr: "Pots et plateaux légers empilables pour propagation, repiquage et manutention quotidienne en serre.", zh: "轻量、可堆叠的花盆和托盘，适合繁殖、移栽和温室日常搬运。" },
+            "• Drainage options": { es: "• Opciones de drenaje", fr: "• Options drainage", zh: "• 排水孔选项" },
+            "• Efficient stacking": { es: "• Apilamiento eficiente", fr: "• Empilage efficace", zh: "• 高效堆叠" },
+            "• Bulk carton packing": { es: "• Embalaje en caja", fr: "• Emballage carton", zh: "• 批量纸箱包装" },
+            "Garden Centers & Retailers": { es: "Centros de jardinería y minoristas", fr: "Jardineries et détaillants", zh: "园艺中心与零售商" },
+            "Decorative planters and hanging baskets for retail-ready plant displays and seasonal sales.": { es: "Maceteros decorativos y cestas colgantes listos para exhibición minorista y ventas de temporada.", fr: "Jardinières décoratives et paniers suspendus prêts pour la vente et les ventes saisonnières.", zh: "适合零售展示和季节销售的装饰花盆与吊篮。" },
+            "• Popular colors": { es: "• Colores populares", fr: "• Couleurs populaires", zh: "• 热销颜色" },
+            "• Label-friendly surface": { es: "• Superficie para etiquetas", fr: "• Surface adaptée aux étiquettes", zh: "• 便于贴标签" },
+            "• Sample order available": { es: "• Muestra disponible", fr: "• Échantillon disponible", zh: "• 可下样品单" },
+            "Importers & Private Label": { es: "Importadores y marca propia", fr: "Importateurs et marque privée", zh: "进口商与自有品牌" },
+            "Custom color, logo printing, packaging and mold development for long-term product programs.": { es: "Color personalizado, impresión de logo, embalaje y desarrollo de moldes para programas a largo plazo.", fr: "Couleur personnalisée, logo, emballage et développement de moules pour programmes à long terme.", zh: "支持颜色、Logo、包装和模具开发，适合长期产品项目。" },
+            "• OEM/ODM support": { es: "• Soporte OEM/ODM", fr: "• Support OEM/ODM", zh: "• OEM/ODM 支持" },
+            "• FOB/CIF quotation": { es: "• Cotización FOB/CIF", fr: "• Devis FOB/CIF", zh: "• FOB/CIF 报价" },
+            "• Export documents": { es: "• Documentos de exportación", fr: "• Documents export", zh: "• 出口单证" },
+            "Manufacturing Snapshot": { es: "Resumen de fabricación", fr: "Aperçu fabrication", zh: "制造能力概览" },
+            "Clear capability signals buyers expect before requesting a quote.": { es: "Señales claras de capacidad antes de solicitar cotización.", fr: "Signaux clairs de capacité avant demande de devis.", zh: "客户询价前最关心的制造能力信息。" },
+            "We strengthened the website with information importers usually check first: material, size range, packing, customization and export terms.": { es: "Añadimos información que los importadores revisan primero: material, tamaños, embalaje, personalización y términos de exportación.", fr: "Nous avons ajouté les informations que les importateurs vérifient d'abord: matériau, tailles, emballage, personnalisation et termes export.", zh: "我们补充了进口商通常优先查看的信息：材料、尺寸范围、包装、定制和出口条款。" },
+            "PP / recycled options": { es: "PP / opciones recicladas", fr: "PP / options recyclées", zh: "PP / 可回收选项" },
+            "Injection molding": { es: "Moldeo por inyección", fr: "Moulage par injection", zh: "注塑成型" },
+            "Color · logo · mold": { es: "Color · logo · molde", fr: "Couleur · logo · moule", zh: "颜色 · Logo · 模具" },
+            "FOB / CIF / sample": { es: "FOB / CIF / muestra", fr: "FOB / CIF / échantillon", zh: "FOB / CIF / 样品" },
+            "Why Buyers Choose Us": { es: "Por qué nos eligen los compradores", fr: "Pourquoi les acheteurs nous choisissent", zh: "买家为什么选择我们" },
+            "Get Quote": { es: "Cotización", fr: "Devis", zh: "获取报价" }
+        };
+
+
+        const elementTranslations = {
+            'h1': {
+                en: 'Wholesale Plastic Pots, Built for Growers.',
+                es: 'Macetas plásticas al por mayor, hechas para productores.',
+                fr: 'Pots plastiques en gros, conçus pour les producteurs.',
+                zh: '批发塑料花盆，为种植客户而造。'
+            },
+            '#buyers h2': {
+                en: 'One supplier for nursery production, retail display and custom programs.',
+                es: 'Un proveedor para producción de vivero, exhibición minorista y programas personalizados.',
+                fr: 'Un fournisseur pour production en pépinière, vente au détail et programmes personnalisés.',
+                zh: '一个供应商，覆盖苗圃生产、零售展示和定制项目。'
+            },
+            'section:nth-of-type(5) h2': {
+                en: 'Clear capability signals buyers expect before requesting a quote.',
+                es: 'Señales claras de capacidad que los compradores esperan antes de solicitar cotización.',
+                fr: 'Signaux clairs de capacité attendus par les acheteurs avant demande de devis.',
+                zh: '客户询价前最关心的制造能力信息。'
+            }
+        };
+
+        function translateElementText(lang) {
+            Object.keys(elementTranslations).forEach(function(selector) {
+                const el = document.querySelector(selector);
+                if (el && elementTranslations[selector][lang]) {
+                    el.textContent = elementTranslations[selector][lang];
+                }
+            });
+        }
+
+        const staticReverse = {};
+        Object.keys(staticTranslations).forEach(function(enText) {
+            staticReverse[enText] = enText;
+            Object.keys(staticTranslations[enText]).forEach(function(lang) {
+                staticReverse[staticTranslations[enText][lang]] = enText;
+            });
+        });
+
+        function translateStaticText(lang) {
+            const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+                acceptNode: function(node) {
+                    if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+                    const parent = node.parentElement;
+                    if (!parent || ['SCRIPT', 'STYLE', 'TEXTAREA', 'INPUT', 'SELECT', 'OPTION'].includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            });
+            const nodes = [];
+            while (walker.nextNode()) nodes.push(walker.currentNode);
+            nodes.forEach(function(node) {
+                const original = node.nodeValue;
+                const trimmed = original.trim().replace(/\s+/g, ' ');
+                const englishKey = staticReverse[trimmed];
+                if (!englishKey) return;
+                const next = lang === 'en' ? englishKey : (staticTranslations[englishKey][lang] || englishKey);
+                node.nodeValue = original.replace(trimmed, next);
+            });
+        }
+
         // Current language
         let currentLang = 'en';
 
@@ -1883,6 +2054,10 @@
                     el.setAttribute('placeholder', translations[lang][key]);
                 }
             });
+            
+            // Update redesigned static text
+            translateStaticText(lang);
+            translateElementText(lang);
             
             // Update title and meta
             document.title = translations[lang]['pageTitle'];
