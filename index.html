@@ -1133,16 +1133,8 @@
                             <textarea name="message" rows="4" placeholder data-i18n-placeholder="contact.form.messagePlaceholder" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                         </div>
 
-                        <div class="rounded-xl border border-green-500/40 bg-green-900/30 p-4 text-sm text-green-100" id="feishu-form-notice">
-                            <p class="font-semibold mb-1" data-i18n="contact.form.saveNoticeTitle">Recommended: submit to our inquiry system</p>
-                            <p data-i18n="contact.form.saveNoticeDesc">Use the green button below to save your inquiry directly into our system. Email and WhatsApp are also available as backup.</p>
-                        </div>
-                        <div class="grid sm:grid-cols-3 gap-3">
+                        <div class="grid sm:grid-cols-2 gap-3">
 
-                            <button type="button" onclick="submitInquiryToFeishuForm()" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors" data-i18n="contact.form.feishuSubmit">
-                                <i class="fas fa-database mr-2"></i>
-                                Submit Inquiry
-                            </button>
                             <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors" data-i18n="contact.form.submit">
                                 <i class="fas fa-envelope mr-2"></i>
                                 Send by Email
@@ -1227,8 +1219,6 @@
     </div>
 
     <script>
-        const FEISHU_INQUIRY_FORM_URL = 'https://pcn6k3glqc7l.feishu.cn/base/M7B8b3nFMae8p2s0iQMcmvY1nXc?table=tblITH5HH2AVV0oV&view=vewPgxzDBA';
-
         // Gallery functions
         let currentLightboxProduct = '';
         let currentLightboxIndex = 0;
@@ -2472,27 +2462,6 @@
         }
 
 
-
-        function submitInquiryToFeishuForm() {
-            var d = getFormData();
-            if (!d.name || !d.email) {
-                alert(currentLang === 'zh' ? '请至少填写姓名和邮箱。' : currentLang === 'ar' ? 'يرجى إدخال الاسم والبريد الإلكتروني على الأقل.' : 'Please fill in your name and email at minimum.');
-                return;
-            }
-            var details = buildInquiryText(d);
-            try {
-                sessionStorage.setItem('planterproInquiryDraft', details);
-            } catch (e) {}
-            var msg = {
-                en: 'The inquiry system will open in a new tab. Please paste or re-enter your details if the form does not prefill automatically.',
-                es: 'El sistema de consultas se abrirá en una nueva pestaña. Pegue o vuelva a ingresar sus datos si el formulario no se completa automáticamente.',
-                fr: 'Le système de demande va s’ouvrir dans un nouvel onglet. Collez ou ressaisissez vos informations si le formulaire ne se préremplit pas.',
-                zh: '询盘系统会在新标签页打开。如果表单没有自动带入内容，请复制或重新填写资料。',
-                ar: 'سيتم فتح نظام الاستفسارات في تبويب جديد. إذا لم يتم تعبئة النموذج تلقائياً، يرجى لصق أو إعادة إدخال التفاصيل.'
-            };
-            alert(msg[currentLang] || msg.en);
-            window.open(FEISHU_INQUIRY_FORM_URL, '_blank', 'noopener');
-        }
 
         // Form submission via email
         document.getElementById('contact-form').addEventListener('submit', function(e) {
