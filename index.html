@@ -1135,16 +1135,17 @@
 
                         <div class="grid sm:grid-cols-2 gap-3">
 
-                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors" data-i18n="contact.form.submit">
-                                <i class="fas fa-envelope mr-2"></i>
-                                Send by Email
+                            <button type="submit" id="inquiry-submit-button" class="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-500 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg transition-colors" data-i18n="contact.form.submit">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Submit Inquiry
                             </button>
                             <button type="button" onclick="sendInquiryByWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors" data-i18n="contact.form.whatsappSubmit">
                                 <i class="fab fa-whatsapp mr-2"></i>
                                 Send by WhatsApp
                             </button>
                         </div>
-                        <p class="text-xs text-gray-400" data-i18n="contact.form.note">The form opens your email or WhatsApp with the inquiry details. We confirm price and shipping before payment.</p>
+                        <p id="inquiry-status" class="hidden text-sm rounded-lg px-4 py-3"></p>
+                        <p class="text-xs text-gray-400" data-i18n="contact.form.note">Submit the form and we will receive it directly. You can also send by WhatsApp if preferred.</p>
                     </form>
                 </div>
             </div>
@@ -1389,7 +1390,7 @@
                 "contact.form.product": "Product Interest",
                 "contact.form.message": "Message",
                 "contact.form.messagePlaceholder": "Tell us about your quantity requirements and any custom needs...",
-                "contact.form.submit": "Send Message",
+                "contact.form.submit": "Submit Inquiry",
                 "contact.form.selectPlaceholder": "Select a product category",
                 "footer.desc": "Your trusted manufacturer of quality plastic garden pots. Serving wholesale buyers and distributors worldwide since 2014.",
                 "footer.products": "Products",
@@ -1436,7 +1437,7 @@
                 ,"contact.form.shippingNotSure": "Not sure"
                 ,"contact.form.logo": "Logo Customization"
                 ,"contact.form.whatsappSubmit": "Send by WhatsApp"
-                ,"contact.form.note": "The form opens your email or WhatsApp with the inquiry details. We confirm price and shipping before payment."
+                ,"contact.form.note": "Submit the form and we will receive it directly. You can also send by WhatsApp if preferred."
                 ,"common.yes": "Yes"
                 ,"common.no": "No"
                 ,"common.notSure": "Not sure"
@@ -1542,7 +1543,7 @@
                 "contact.form.product": "Interés en Producto",
                 "contact.form.message": "Mensaje",
                 "contact.form.messagePlaceholder": "Cuéntenos sobre sus requisitos de cantidad y cualquier necesidad personalizada...",
-                "contact.form.submit": "Enviar Mensaje",
+                "contact.form.submit": "Enviar consulta",
                 "contact.form.selectPlaceholder": "Seleccione una categoría de producto",
                 "footer.desc": "Su fabricante confiable de macetas de plástico de calidad. Sirviendo compradores mayoristas y distribuidores en todo el mundo desde 2014.",
                 "footer.products": "Productos",
@@ -1589,7 +1590,7 @@
                 ,"contact.form.shippingNotSure": "No estoy seguro"
                 ,"contact.form.logo": "Personalización de logo"
                 ,"contact.form.whatsappSubmit": "Enviar por WhatsApp"
-                ,"contact.form.note": "El formulario abre su correo o WhatsApp con los detalles. Confirmamos precio y envío antes del pago."
+                ,"contact.form.note": "Envíe el formulario y lo recibiremos directamente. También puede enviarlo por WhatsApp."
                 ,"common.yes": "Sí"
                 ,"common.no": "No"
                 ,"common.notSure": "No estoy seguro"
@@ -1695,7 +1696,7 @@
                 "contact.form.product": "Intérêt Produit",
                 "contact.form.message": "Message",
                 "contact.form.messagePlaceholder": "Parlez-nous de vos besoins en quantité et toute demande personnalisée...",
-                "contact.form.submit": "Envoyer le Message",
+                "contact.form.submit": "Envoyer la demande",
                 "contact.form.selectPlaceholder": "Sélectionnez une catégorie de produit",
                 "footer.desc": "Votre fabricant de confiance de pots de jardin en plastique de qualité. Servant les acheteurs en gros et distributeurs dans le monde entier depuis 2014.",
                 "footer.products": "Produits",
@@ -2033,9 +2034,9 @@
             "contact.form.logo": "تخصيص الشعار",
             "contact.form.message": "الرسالة",
             "contact.form.messagePlaceholder": "أخبرنا بالكمية المطلوبة وأي احتياجات مخصصة...",
-            "contact.form.submit": "إرسال بالبريد",
+            "contact.form.submit": "إرسال الاستفسار",
             "contact.form.whatsappSubmit": "إرسال عبر واتساب",
-            "contact.form.note": "يفتح النموذج البريد أو واتساب مع تفاصيل الاستفسار. نؤكد السعر والشحن قبل الدفع.",
+            "contact.form.note": "أرسل النموذج وسنستلمه مباشرة. يمكنك أيضاً الإرسال عبر واتساب.",
             "payment.title": "طرق الدفع",
             "payment.p1": "• PayPal لطلبات العينات",
             "payment.p2": "• تحويل T/T للطلبات الكبيرة",
@@ -2463,21 +2464,88 @@
 
 
 
-        // Form submission via email
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var d = getFormData();
+        const INQUIRY_API_ENDPOINT = 'https://planterpro-inquiry.cc1338629.workers.dev/submit';
+        const CONTACT_EMAIL = 'gardensupply' + String.fromCharCode(64) + 'zohomail.cn';
+
+        function openInquiryEmailFallback(d) {
             var body = buildInquiryText(d);
             var subject = encodeURIComponent('PlanterPro Inquiry: ' + (d.product||'General'));
-            var mailto = 'mailto:gardensupply@zohomail.cn?subject=' + subject + '&body=' + encodeURIComponent(body);
+            var mailto = 'mailto:' + CONTACT_EMAIL + '?subject=' + subject + '&body=' + encodeURIComponent(body);
             window.open(mailto, '_blank');
+        }
+
+        function setInquiryStatus(type, text) {
+            var statusEl = document.getElementById('inquiry-status');
+            if (!statusEl) return;
+            statusEl.classList.remove('hidden', 'bg-green-900/50', 'text-green-100', 'border', 'border-green-700', 'bg-red-900/50', 'text-red-100', 'border-red-700', 'bg-blue-900/50', 'text-blue-100', 'border-blue-700');
+            if (type === 'success') statusEl.classList.add('bg-green-900/50', 'text-green-100', 'border', 'border-green-700');
+            else if (type === 'error') statusEl.classList.add('bg-red-900/50', 'text-red-100', 'border', 'border-red-700');
+            else statusEl.classList.add('bg-blue-900/50', 'text-blue-100', 'border', 'border-blue-700');
+            statusEl.textContent = text;
+        }
+
+        function getInquiryMessage(type) {
             var messages = {
-                en: 'Your email client should open with the inquiry details. If not, please email gardensupply@zohomail.cn directly.',
-                es: 'Se abrirá su cliente de correo con los detalles. Si no, envíe un correo a gardensupply@zohomail.cn.',
-                fr: 'Votre client email devrait s\'ouvrir. Sinon, envoyez directement à gardensupply@zohomail.cn.',
-                zh: '您的邮件客户端应该会打开并填入询盘信息。如果没有，请直接发送邮件到 gardensupply@zohomail.cn。'
+                submitting: {
+                    en: 'Submitting your inquiry...',
+                    es: 'Enviando su consulta...',
+                    fr: 'Envoi de votre demande...',
+                    zh: '正在提交您的询盘...',
+                    ar: 'جارٍ إرسال الاستفسار...'
+                },
+                success: {
+                    en: 'Thank you. Your inquiry has been submitted. We will reply within 24 hours.',
+                    es: 'Gracias. Su consulta ha sido enviada. Responderemos en 24 horas.',
+                    fr: 'Merci. Votre demande a été envoyée. Nous répondrons sous 24 heures.',
+                    zh: '谢谢，您的询盘已提交。我们将在24小时内回复。',
+                    ar: 'شكراً لك. تم إرسال استفسارك وسنرد خلال 24 ساعة.'
+                },
+                fallback: {
+                    en: 'Online submission is temporarily unavailable. Your email client has opened as a backup. You can also contact us by WhatsApp.',
+                    es: 'El envío en línea no está disponible temporalmente. Se abrió su correo como respaldo. También puede contactarnos por WhatsApp.',
+                    fr: 'L’envoi en ligne est temporairement indisponible. Votre email s’ouvre en secours. Vous pouvez aussi nous contacter par WhatsApp.',
+                    zh: '在线提交暂时不可用，已为您打开邮件作为备用。也可以通过 WhatsApp 联系我们。',
+                    ar: 'الإرسال عبر الموقع غير متاح مؤقتاً. تم فتح البريد كخيار احتياطي. يمكنك أيضاً التواصل عبر واتساب.'
+                }
             };
-            alert(messages[currentLang] || messages.en);
+            return (messages[type] && (messages[type][currentLang] || messages[type].en)) || '';
+        }
+
+        // Form submission: website → secure Worker → Feishu Bitable, with email fallback
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var form = e.currentTarget;
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            var button = document.getElementById('inquiry-submit-button');
+            var d = getFormData();
+            d.sourceUrl = window.location.href;
+            d.language = currentLang || 'en';
+
+            if (button) button.disabled = true;
+            setInquiryStatus('info', getInquiryMessage('submitting'));
+
+            try {
+                var resp = await fetch(INQUIRY_API_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(d)
+                });
+                var result = await resp.json().catch(function() { return {}; });
+                if (!resp.ok || !result.ok) throw new Error(result.error || 'Submit failed');
+                setInquiryStatus('success', getInquiryMessage('success'));
+                form.reset();
+                var logoDefault = form.querySelector('input[name="logo"][value="Not sure"]');
+                if (logoDefault) logoDefault.checked = true;
+            } catch (err) {
+                console.warn('Inquiry submit failed, using email fallback.', err);
+                setInquiryStatus('error', getInquiryMessage('fallback'));
+                openInquiryEmailFallback(d);
+            } finally {
+                if (button) button.disabled = false;
+            }
         });
 
         // Send inquiry via WhatsApp
