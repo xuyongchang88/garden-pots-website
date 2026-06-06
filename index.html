@@ -2779,11 +2779,15 @@
             setInquiryStatus('info', getInquiryMessage('submitting'));
 
             try {
+                var controller = new AbortController();
+                var timeoutId = setTimeout(function() { controller.abort(); }, 8000);
                 var resp = await fetch(INQUIRY_API_ENDPOINT, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(d)
+                    body: JSON.stringify(d),
+                    signal: controller.signal
                 });
+                clearTimeout(timeoutId);
                 var result = await resp.json().catch(function() { return {}; });
                 if (!resp.ok || !result.ok) throw new Error(result.error || 'Submit failed');
                 setInquiryStatus('success', getInquiryMessage('success'));
