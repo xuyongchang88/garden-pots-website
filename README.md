@@ -4,7 +4,7 @@ Official website for PlanterPro - premium plastic garden pots manufacturer from 
 
 - **Domain**: https://planterpro.cn
 - **Products**: Plastic nursery pots, decorative pots, hanging baskets, square nursery pots, classic round pots, custom molds
-- **Contact**: gardensupply@zohomail.cn
+- **Contact**: saless@planterpro.cn
 
 ## 🚀 Deployed on GitHub Pages
 
